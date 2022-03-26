@@ -104,4 +104,5 @@ bonusove body `LOADING`
 3. Anna Kachmasheva
    - annakachmasheva@gmail.com
 4. Aiya Rakhimova
+   - rakhiaiy@fel.cvut.cz
    - add mail
