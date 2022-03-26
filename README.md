@@ -73,6 +73,29 @@ User = {
 }
 ```
 
+# Requirements
+Společné požadavky:
+- vyber vhodne technologie a jazyka: Java/SpringBoot, Java, C#, … (povinné) `DONE`
+- readme v gitu s popisem co je hotove a kde se funkcionalita nachazi (povinné) `DONE`
+- vyuziti spolecne DB (relacni nebo grafova) (povinné) `DONE`
+- vyuziti cache (napriklad Hazelcast) (volitelné -2b pokud není) `LOADING`
+- vyuziti messaging principu (Kafka nebo JMS) (volitelné -2b pokud není) `LOADING`
+- aplikace bude zabezpecena pomoci bud basic authorization nebo pomoci OAuth2 (volitelné -2b
+pokud není) `DONE`
+- vyuziti Inteceptors (alespon jedna trida) - napriklad na logovani (prijde request a zapiseme ho do
+logu) (volitelné -2b pokud není) `LOADING`
+- vyuziti jedne z technologie: SOAP, REST, graphQL, Java RMI, Corba, XML-RPC (volitelné -2b
+pokud není) `DONE`
+- nasazeni na produkcni server napriklad Heroku (povinné) `LOADING`
+- vyber vhodne architektury (event base, pipe and filter, …) (povinné) `LOADING`
+- inicializacni postup (jak aplikaci deploynout, kde jsou zakladni data do nove DB typu admin apod)
+(povinné) `DONE`
+- vyuziti elasticsearch (volitelné -2b pokud není) `LOADING`
+- pouziti alespon 5 design patternu (musi davat smysl :) ) (povinné) `LOADING`
+- za kazdeho clena tymu 2 UC (use cases - aby SW nebyl trivialni) (povinné)
+bonusove body `LOADING`
+- cloud sluzby (azure, aws) +2 bod `LOADING`
+
 # Contacts
 1. Ivan Godunov
     - shalaiva@fel.cvut.cz
