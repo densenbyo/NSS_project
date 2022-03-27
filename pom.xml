@@ -285,5 +285,9 @@
             <name>Anna Kachmasheva</name>
             <email>annakachmasheva@gmail.com</email>
         </developer>
+        <developer>
+            <name>Aiya Rakhimova</name>
+            <email>rakhiaiy@fel.cvut.cz</email>
+        </developer>
     </developers>
 </project>
