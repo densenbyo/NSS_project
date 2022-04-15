@@ -3,10 +3,13 @@ A project for memorizing foreign words based on the flashcard and periodic learn
 Flashcard is an abstract two-sided card, the word in the user’s native language is written on the hidden side,
 and the word in the chosen language is written on another side.
 
-# Build With
+# Technologies
 - [Spring Boot](https://spring.io/)
 - [ReactJS](https://reactjs.org/)
 - [Bootstrap](https://react-bootstrap.github.io/)
+- [Kafka](https://kafka.apache.org)
+- [Hazelcast](https://hazelcast.com)
+- [Elastic](https://en.wikipedia.org/wiki/Elasticsearch)
 
 # Basic Instruction
 Application is needed to be started on web server. Before starting need to configure settings
@@ -49,6 +52,12 @@ npm start
 
 **back-end has to be started to work correctly**
 
+# Start with Kafka
+1. Start on local zookeeper server
+2. Start on local kafka server
+3. Start Spring
+4. Start React `NOT NECESSARY`
+
 # Configure Setting
 Go to 
 **`src/main/resources/application.properties`**
@@ -79,10 +88,10 @@ Společné požadavky:
 - [X] readme v gitu s popisem co je hotove a kde se funkcionalita nachazi (povinné) `DONE`
 - [X] vyuziti spolecne DB (relacni nebo grafova) (povinné) `DONE`
 - [ ] vyuziti cache (napriklad Hazelcast) (volitelné -2b pokud není) `LOADING`
-- [ ] vyuziti messaging principu (Kafka nebo JMS) (volitelné -2b pokud není) `LOADING`
+- [x] vyuziti messaging principu (Kafka nebo JMS) (volitelné -2b pokud není) `LOADING`
 - [X] aplikace bude zabezpecena pomoci bud basic authorization nebo pomoci OAuth2 (volitelné -2b
 pokud není) `DONE`
-- [ ] vyuziti Inteceptors (alespon jedna trida) - napriklad na logovani (prijde request a zapiseme ho do
+- [x] vyuziti Inteceptors (alespon jedna trida) - napriklad na logovani (prijde request a zapiseme ho do
 logu) (volitelné -2b pokud není) `LOADING`
 - [X] vyuziti jedne z technologie: SOAP, REST, graphQL, Java RMI, Corba, XML-RPC (volitelné -2b
 pokud není) `DONE`
