@@ -8,6 +8,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.RegistrationRequest;
 import cz.cvut.fel.ear.lingo.security.model.Response;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
+import cz.cvut.fel.ear.lingo.services.interfaces.KafkaService;
 import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,10 +30,16 @@ public class UserController {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
+    private final KafkaService kafkaService;
 
     @Autowired
-    public UserController(UserService userService){
+    private KafkaTemplate<String, String> kafkaTemplate;
+    private static final String TOPIC = "AdminReport";
+
+    @Autowired
+    public UserController(UserService userService, KafkaService kafkaService){
         this.userService = userService;
+        this.kafkaService = kafkaService;
     }
 
     @GetMapping(value = "/current", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -90,6 +98,11 @@ public class UserController {
             return;
         }
         userService.block(user);
+
+        String message = "Admin: " +
+                "Blocked {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
+
         LOG.info("Blocked {}.", user);
     }
 
@@ -103,6 +116,11 @@ public class UserController {
             return;
         }
         userService.unblock(user);
+
+        String message = "Admin: " +
+                "Unblocked {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
+
         LOG.info("Unblocked {}.", user);
     }
 
@@ -115,6 +133,11 @@ public class UserController {
             return;
         }
         userService.setRole(role, user);
+
+        String message = "Admin: " +
+                "Changed Role {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
+
         LOG.info("The role of the user with id: {} has changed.", id);
     }
 
