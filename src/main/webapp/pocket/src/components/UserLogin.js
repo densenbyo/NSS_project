@@ -25,6 +25,7 @@ export default class UserLogin extends Component {
             .then(() => {
                 this.setState({"show": true});
                 setTimeout(() => this.setState({"show":false}), 3000);
+                setTimeout(() => window.location.reload(), 3200);
             });
     }
 

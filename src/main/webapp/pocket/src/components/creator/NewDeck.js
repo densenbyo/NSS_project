@@ -20,7 +20,7 @@ export default class NewDeck extends Component {
     create(event){
         event.preventDefault();
         const id = localStorage.getItem("userID");
-        RepoService.addNewDeck(this.state.name, this.state.description, this.state.isPublic)
+        RepoService.addNewDeck( this.state.name, this.state.description, this.state.isPublic)
             .then(() => {
                 this.setState({"show": true});
                 setTimeout(() => this.setState({"show":false}), 3000);

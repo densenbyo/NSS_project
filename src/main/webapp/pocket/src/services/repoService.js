@@ -32,7 +32,7 @@ class RepoService {
     }
 
     addNewDeck(name, description, isPublic){
-        return axios.patch(API_URL + localStorage.getItem("userID") + "/flashcardDecks", {
+        return axios.put(API_URL + localStorage.getItem("userID") + "/flashcardDecks", {
             name, description, isPublic
         }, {
             headers: {
@@ -44,22 +44,45 @@ class RepoService {
             });
     }
 
-    deleteDeck(id, deckId){
-        return axios.patch(API_URL + "repo_" + id +"/removeDeck/" + deckId)
+    deleteDeck(id, deckId, name, desc){
+        return axios.delete(API_URL + id +"/flashcardDecks", {
+            headers: {
+                'Authorization' : 'Bearer ' + localStorage.getItem("token")
+            },
+            data: {
+                id:deckId,
+                name:name,
+                description:desc
+            }
+        })
             .then(() => {
                 window.location.reload();
             });
     }
 
     addNewCard(id, word, translation){
-        return axios.post(API_URL + "repo_" + id +"/addCard/", {word, translation})
+        return axios.put(API_URL + id +"/flashcards", {word,translation},
+            {
+                headers: {
+                    'Authorization' : 'Bearer ' + localStorage.getItem("token")
+                }
+            })
             .then(response => {
                 console.log(response.data);
             });
     }
 
-    deleteCard(id, cardId){
-        return axios.patch(API_URL + "repo_" + id +"/deleteCard/" + cardId)
+    deleteCard(id, cardId, word, translation){
+        return axios.delete(API_URL + id +"/flashcards", {
+            headers: {
+                'Authorization' : 'Bearer ' + localStorage.getItem("token")
+            },
+            data: {
+                id:cardId,
+                word:word,
+                translation:translation
+            }
+        })
             .then(() => {
                 window.location.reload();
             });
