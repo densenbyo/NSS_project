@@ -8,6 +8,7 @@ import cz.cvut.fel.ear.lingo.model.enums.UserRole;
 import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
 import cz.cvut.fel.ear.lingo.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -109,6 +110,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
+    @Cacheable("users")
     public List<User> findAllUser() {
         return userDao.findAll();
     }
