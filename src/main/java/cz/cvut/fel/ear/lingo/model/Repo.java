@@ -39,7 +39,7 @@ public class Repo extends AbstractClass {
 
     public void addFlashcardDeck(FlashcardDeck toAdd) {
         flashcardDecks.add(toAdd);
-        if(toAdd.getFlashcards().size() != 0){
+        if(toAdd.getFlashcards() != null){
             for (Flashcard flashcard : toAdd.getFlashcards()) {
                 addFlashcard(flashcard);
             }

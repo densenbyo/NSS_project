@@ -52,15 +52,19 @@ export default class Repo extends Component {
             })
     }
 
-    onclick(e){
-        const id = localStorage.getItem("repoID")
-        RepoService.deleteDeck(id, e)
+    onclick(e, i, j){
+        const id = localStorage.getItem("userID")
+        RepoService.deleteDeck(id, e, i, j).then(() => {
+            console.log("deleted Deck")
+        })
     }
 
 
-    onclick2(e){
-        const id = localStorage.getItem("repoID")
-        RepoService.deleteCard(id, e)
+    onclick2(e, i ,j){
+        const id = localStorage.getItem("userID")
+        RepoService.deleteCard(id, e, i, j).then(() => {
+            console.log("deleted Card")
+        })
     }
 
     render() {
@@ -83,7 +87,6 @@ export default class Repo extends Component {
                                 <Accordion.Header>Decks</Accordion.Header>
                                 <Accordion.Body>
                                     {arr.map((data) => {
-                                        var id = localStorage.getItem("userID");
                                         return(
                                             <ListGroup numbered key={data.id}>
                                                 <ListGroup.Item
@@ -94,7 +97,7 @@ export default class Repo extends Component {
                                                     </div>
                                                     <ButtonGroup>
                                                         <Button variant="danger"
-                                                                onClick={() => this.onclick(data.id)}>
+                                                                onClick={() => this.onclick(data.id, data.name, data.description)}>
                                                             Delete
                                                         </Button>
                                                     </ButtonGroup>
@@ -120,7 +123,7 @@ export default class Repo extends Component {
                                                         </div>
                                                         <ButtonGroup>
                                                             <Button variant="danger"
-                                                                    onClick={() => this.onclick2(card.id)}>
+                                                                    onClick={() => this.onclick2(card.id, card.word, card.translation)}>
                                                                 Delete
                                                             </Button>
                                                         </ButtonGroup>
