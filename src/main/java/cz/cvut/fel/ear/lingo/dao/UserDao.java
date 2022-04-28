@@ -18,6 +18,7 @@ public class UserDao extends BaseDao<User> {
         super(User.class);
     }
 
+
     @Override
     public List<User> findAll() {
         try {
