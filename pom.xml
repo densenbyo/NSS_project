@@ -113,6 +113,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Hazelcast dependency -->
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-all</artifactId>
+            <version>4.0.2</version>
+        </dependency>
+
         <!-- H2 database for tests -->
         <dependency>
             <groupId>com.h2database</groupId>
