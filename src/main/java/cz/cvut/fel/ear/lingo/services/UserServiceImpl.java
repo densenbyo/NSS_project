@@ -9,6 +9,7 @@ import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
 import cz.cvut.fel.ear.lingo.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,10 @@ public class UserServiceImpl implements UserService {
     private final UserDao userDao;
     private final StatisticDao statisticDao;
     private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
+    private static final String TOPIC = "AdminReport";
 
     @Autowired
     public UserServiceImpl(UserDao userDao, StatisticDao statisticDao, PasswordEncoder passwordEncoder) {
@@ -88,6 +93,10 @@ public class UserServiceImpl implements UserService {
         Objects.requireNonNull(user);
         user.setActive(false);
         userDao.update(user);
+
+        String message = "Admin: " +
+                "Unblocked {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override
@@ -96,6 +105,10 @@ public class UserServiceImpl implements UserService {
         Objects.requireNonNull(user);
         user.setActive(true);
         userDao.update(user);
+
+        String message = "Admin: " +
+                "Blocked {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override
@@ -106,6 +119,10 @@ public class UserServiceImpl implements UserService {
         if (role.equals("USER")) user.setRole(UserRole.USER);
         if (role.equals("ADMIN")) user.setRole(UserRole.ADMIN);
         userDao.update(user);
+
+        String message = "Admin: " +
+                "Changed Role {" + user.getId() + " " +  user.getUsername()+ "}";
+        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override

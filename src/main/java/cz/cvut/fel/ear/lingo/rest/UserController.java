@@ -33,10 +33,6 @@ public class UserController {
     private final KafkaService kafkaService;
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
-    private static final String TOPIC = "AdminReport";
-
-    @Autowired
     public UserController(UserService userService, KafkaService kafkaService){
         this.userService = userService;
         this.kafkaService = kafkaService;
@@ -98,11 +94,6 @@ public class UserController {
             return;
         }
         userService.block(user);
-
-        String message = "Admin: " +
-                "Blocked {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
-
         LOG.info("Blocked {}.", user);
     }
 
@@ -116,11 +107,6 @@ public class UserController {
             return;
         }
         userService.unblock(user);
-
-        String message = "Admin: " +
-                "Unblocked {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
-
         LOG.info("Unblocked {}.", user);
     }
 
@@ -133,11 +119,6 @@ public class UserController {
             return;
         }
         userService.setRole(role, user);
-
-        String message = "Admin: " +
-                "Changed Role {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
-
         LOG.info("The role of the user with id: {} has changed.", id);
     }
 
