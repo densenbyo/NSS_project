@@ -35,6 +35,10 @@ public class UserServiceImpl implements UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    public void sendMessageToKafka(String message) {
+        kafkaTemplate.send(TOPIC, message);
+    }
+
     @Override
     @Transactional
     public void persist(User user) {
@@ -93,10 +97,6 @@ public class UserServiceImpl implements UserService {
         Objects.requireNonNull(user);
         user.setActive(false);
         userDao.update(user);
-
-        String message = "Admin: " +
-                "Unblocked {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override
@@ -105,10 +105,6 @@ public class UserServiceImpl implements UserService {
         Objects.requireNonNull(user);
         user.setActive(true);
         userDao.update(user);
-
-        String message = "Admin: " +
-                "Blocked {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override
@@ -119,10 +115,6 @@ public class UserServiceImpl implements UserService {
         if (role.equals("USER")) user.setRole(UserRole.USER);
         if (role.equals("ADMIN")) user.setRole(UserRole.ADMIN);
         userDao.update(user);
-
-        String message = "Admin: " +
-                "Changed Role {" + user.getId() + " " +  user.getUsername()+ "}";
-        kafkaTemplate.send(TOPIC, message);
     }
 
     @Override

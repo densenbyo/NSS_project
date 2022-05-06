@@ -95,6 +95,7 @@ public class UserController {
         }
         userService.block(user);
         LOG.info("Blocked {}.", user);
+        userService.sendMessageToKafka("Admin {\nBlocked user: " + user.getId() + "\n}");
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -108,6 +109,7 @@ public class UserController {
         }
         userService.unblock(user);
         LOG.info("Unblocked {}.", user);
+        userService.sendMessageToKafka("Admin {\nUnblocked user: " + user.getId() + "\n}");
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -120,6 +122,7 @@ public class UserController {
         }
         userService.setRole(role, user);
         LOG.info("The role of the user with id: {} has changed.", id);
+        userService.sendMessageToKafka("Admin {\nUser: " + user.getId() + "\n" + "Role: " + role + "\n}");
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN') || #id == authentication.principal.id")
@@ -143,6 +146,7 @@ public class UserController {
             return;
         }
         userService.remove(user);
+        userService.sendMessageToKafka("Admin {\nDeleted user: " + user.getId() + "\n}");
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")

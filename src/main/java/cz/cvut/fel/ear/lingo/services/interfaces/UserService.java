@@ -33,4 +33,6 @@ public interface UserService {
     User findByUsername(String name);
 
     User findByMail(String mail);
+
+    void sendMessageToKafka(String message);
 }
