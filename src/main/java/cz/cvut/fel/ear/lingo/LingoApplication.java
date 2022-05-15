@@ -6,7 +6,6 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @EnableCaching
 @SpringBootApplication
-@EnableCaching
 public class LingoApplication {
     public static void main(String[] args) {
         SpringApplication.run(LingoApplication.class, args);
