@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectId" id="26yVLrQnx6boiwTTFLP20LPZODp" />
   <component name="ProjectViewState">
@@ -75,7 +78,7 @@
       <workItem from="1651322907488" duration="358000" />
       <workItem from="1651852658580" duration="356000" />
       <workItem from="1651916293001" duration="16000" />
-      <workItem from="1652642268842" duration="1960000" />
+      <workItem from="1652642268842" duration="2224000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>
