@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6a7660b-cb80-4f4b-ba68-4e70fcab473f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6a7660b-cb80-4f4b-ba68-4e70fcab473f/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6a7660b-cb80-4f4b-ba68-4e70fcab473f/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6a7660b-cb80-4f4b-ba68-4e70fcab473f/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e6a7660b-cb80-4f4b-ba68-4e70fcab473f/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27-Mar-22_18_35_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_27-Mar-22_18_35__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/LingoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/LingoApplication.java" afterDir="false" />
-    </list>
+    <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +67,7 @@
       <workItem from="1651322907488" duration="358000" />
       <workItem from="1651852658580" duration="356000" />
       <workItem from="1651916293001" duration="16000" />
-      <workItem from="1652642268842" duration="864000" />
+      <workItem from="1652642268842" duration="1003000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>
