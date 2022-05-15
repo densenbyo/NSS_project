@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Records\NSS\Semka\nss_project\src" />
       <recent name="D:\Records\NSS\Semka\nss_project" />
     </key>
   </component>
@@ -75,7 +75,7 @@
       <workItem from="1651322907488" duration="358000" />
       <workItem from="1651852658580" duration="356000" />
       <workItem from="1651916293001" duration="16000" />
-      <workItem from="1652642268842" duration="1416000" />
+      <workItem from="1652642268842" duration="1960000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>
