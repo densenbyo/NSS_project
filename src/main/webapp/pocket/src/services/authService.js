@@ -1,11 +1,11 @@
 import axios from "axios";
 import jwt from 'jwt-decode';
+import {baseUrl} from "./urlService";
 
-const API_URL = "http://localhost:8080/users/";
 
 class AuthService {
     login(username, password) {
-        return axios.post(API_URL + "login", {username, password})
+        return axios.post(`${baseUrl}/users/login`, {username, password})
             .then(response => {
                 if (response.data.accessToken) {
                     const token = response.data.accessToken;
@@ -28,7 +28,7 @@ class AuthService {
     }
 
     register(username, mail, password) {
-        return axios.post(API_URL + "registration", {
+        return axios.post(`${baseUrl}/users/registration`, {
             username,
             mail,
             password
@@ -46,7 +46,7 @@ class AuthService {
     }
 
     changeRole(id, role){
-        return axios.patch(API_URL + id + "/role/" + role)
+        return axios.patch(`${baseUrl}/users/` + id + `/role/` + role)
             .then(() => {
                 console.log("success");
                 window.location.reload();
@@ -55,7 +55,7 @@ class AuthService {
     }
 
     block(id){
-        return axios.patch(API_URL + id + "/block")
+        return axios.patch(`${baseUrl}/users/` + id + `/block`)
             .then(() => {
                 console.log("success");
                 window.location.reload();
@@ -63,7 +63,7 @@ class AuthService {
     }
 
     unblock(id){
-        return axios.patch(API_URL + id + "/unblock")
+        return axios.patch(`${baseUrl}/users/` + id + `/unblock`)
             .then(() => {
                 console.log("success");
                 window.location.reload();
@@ -71,7 +71,7 @@ class AuthService {
     }
 
     setRemoved(id) {
-        return axios.patch(API_URL+"allUsers/user_"+id+"/delete")
+        return axios.patch(`${baseUrl}/users/` + `allUsers/user_` + id +`/delete`)
             .then(() => {
                 window.location.reload();
             });

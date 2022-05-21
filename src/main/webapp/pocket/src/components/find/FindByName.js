@@ -3,6 +3,7 @@ import {Card, Table, ButtonGroup, Button, InputGroup, FormControl} from 'react-b
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import AuthService from "../../services/authService";
+import {baseUrl} from "../../services/urlService";
 
 export default class FindByName extends Component {
 
@@ -21,8 +22,8 @@ export default class FindByName extends Component {
 
     findBySearch() {
         if (localStorage.length !== 0){
-            var resData;
-            axios.get("http://localhost:8080/users/find/findByUsername/"+this.state.search, {
+            let resData;
+            axios.get(`${baseUrl}/users/find/findByUsername/` + this.state.search, {
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem("token")
                 }

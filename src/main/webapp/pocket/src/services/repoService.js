@@ -1,14 +1,13 @@
 import axios from "axios";
-
-const API_URL = "http://localhost:8080/repo/";
+import {baseUrl} from "./urlService";
 
 class RepoService {
     getAllRepo(){
-        return axios.get(API_URL + "all")
+        return axios.get(`${baseUrl}/repo/all`)
     }
 
     getCurrentRepo(id){
-        return axios.get(API_URL + id, {
+        return axios.get(`${baseUrl}/repo/` + id, {
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem("token")
             }
@@ -16,7 +15,7 @@ class RepoService {
     }
 
     getAllCards(id){
-        return axios.get(API_URL + id + "/flashcards", {
+        return axios.get(`${baseUrl}/repo/` + id + `/flashcards`, {
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem("token")
             }
@@ -24,7 +23,7 @@ class RepoService {
     }
 
     getAllDecks(id){
-        return axios.get(API_URL + id + "/flashcardDecks", {
+        return axios.get(`${baseUrl}/repo/` + id + `/flashcardDecks`, {
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem("token")
             }
@@ -32,7 +31,7 @@ class RepoService {
     }
 
     addNewDeck(name, description, isPublic){
-        return axios.put(API_URL + localStorage.getItem("userID") + "/flashcardDecks", {
+        return axios.put(`${baseUrl}/repo/` + localStorage.getItem("userID") + `/flashcardDecks`, {
             name, description, isPublic
         }, {
             headers: {
@@ -45,7 +44,7 @@ class RepoService {
     }
 
     deleteDeck(id, deckId, name, desc){
-        return axios.delete(API_URL + id +"/flashcardDecks", {
+        return axios.delete(`${baseUrl}/repo/` + id + `/flashcardDecks`, {
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem("token")
             },
@@ -61,7 +60,7 @@ class RepoService {
     }
 
     addNewCard(id, word, translation){
-        return axios.put(API_URL + id +"/flashcards", {word,translation},
+        return axios.put(`${baseUrl}/repo/` + id + `/flashcards`, {word,translation},
             {
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem("token")
@@ -73,7 +72,7 @@ class RepoService {
     }
 
     deleteCard(id, cardId, word, translation){
-        return axios.delete(API_URL + id +"/flashcards", {
+        return axios.delete(`${baseUrl}/repo/` + id +`/flashcards`, {
             headers: {
                 'Authorization' : 'Bearer ' + localStorage.getItem("token")
             },

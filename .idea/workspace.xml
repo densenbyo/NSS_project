@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/Find.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/Find.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindById.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindById.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByMail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByName.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/repoService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/repoService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +72,10 @@
     <configuration name="LingoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="PocketLingo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cz.cvut.fel.ear.lingo.LingoApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="spring.config.name" value="localcfg" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,7 +95,9 @@
       <workItem from="1651322907488" duration="358000" />
       <workItem from="1651852658580" duration="356000" />
       <workItem from="1651916293001" duration="16000" />
-      <workItem from="1652642268842" duration="2224000" />
+      <workItem from="1652642268842" duration="3099000" />
+      <workItem from="1652730824971" duration="5000" />
+      <workItem from="1653140387208" duration="743000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>

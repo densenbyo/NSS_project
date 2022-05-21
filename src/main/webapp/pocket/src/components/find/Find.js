@@ -3,6 +3,7 @@ import {Card, Table, ButtonGroup, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import AuthService from "../../services/authService"
+import {baseUrl} from "../../services/urlService";
 
 export default class Find extends Component {
 
@@ -20,7 +21,7 @@ export default class Find extends Component {
 
     findAllUsers() {
         if(localStorage.getItem("user") === 'ROLE_ADMIN'){
-            axios.get("http://localhost:8080/users/all", {
+            axios.get(`${baseUrl}/users/all`, {
                 headers: {
                     'Authorization' : 'Bearer ' + localStorage.getItem("token")
                 }
