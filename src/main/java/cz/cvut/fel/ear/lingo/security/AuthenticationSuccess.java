@@ -3,6 +3,7 @@ package cz.cvut.fel.ear.lingo.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cz.cvut.fel.ear.lingo.security.model.LoginStatus;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Slf4j
 @Service("successHandler")
 public class AuthenticationSuccess implements AuthenticationSuccessHandler, LogoutSuccessHandler {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AuthenticationSuccess.class);
     private final ObjectMapper mapper;
 
     @Autowired
@@ -30,10 +31,10 @@ public class AuthenticationSuccess implements AuthenticationSuccessHandler, Logo
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException {
         final String username = getUsername(authentication);
-        if (LOG.isTraceEnabled())
-            LOG.trace("Successfully authenticated user {}", username);
+        if (log.isTraceEnabled())
+            log.trace("Successfully authenticated user {}", username);
 
-        final LoginStatus loginStatus = new LoginStatus(true, authentication.isAuthenticated(), username, null);
+        final LoginStatus loginStatus = new LoginStatus(true, username, null, authentication.isAuthenticated());
         mapper.writeValue(httpServletResponse.getOutputStream(), loginStatus);
     }
 
@@ -45,10 +46,10 @@ public class AuthenticationSuccess implements AuthenticationSuccessHandler, Logo
     @Override
     public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                 Authentication authentication) throws IOException {
-        if (LOG.isTraceEnabled())
-            LOG.trace("Successfully logged out user {}", getUsername(authentication));
+        if (log.isTraceEnabled())
+            log.trace("Successfully logged out user {}", getUsername(authentication));
 
-        final LoginStatus loginStatus = new LoginStatus(false, true, null, null);
+        final LoginStatus loginStatus = new LoginStatus(false,  null, null, true);
         mapper.writeValue(httpServletResponse.getOutputStream(), loginStatus);
     }
 }

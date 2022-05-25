@@ -25,7 +25,7 @@ public class TagServiceImpl implements TagService {
     @Transactional
     public void persist(Tag tag) {
         Objects.requireNonNull(tag);
-        tag.setRemoved(false);
+        tag.setIsRemoved(false);
         tagDao.persist(tag);
     }
 
@@ -33,7 +33,7 @@ public class TagServiceImpl implements TagService {
     @Transactional
     public void remove(Tag tag) {
         Objects.requireNonNull(tag);
-        tag.setRemoved(true);
+        tag.setIsRemoved(true);
         tagDao.update(tag);
     }
 

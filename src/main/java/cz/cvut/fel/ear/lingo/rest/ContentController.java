@@ -8,6 +8,7 @@ import cz.cvut.fel.ear.lingo.model.contents.MnemonicContent;
 import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.ContentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Slf4j
 @RestController
 @RequestMapping("/content")
 @Validated

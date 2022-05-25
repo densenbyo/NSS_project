@@ -5,6 +5,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.FlashcardService;
 import cz.cvut.fel.ear.lingo.services.interfaces.RepoService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/flashcard")
 @Validated
 public class FlashcardController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(FlashcardController.class);
     private final FlashcardService fService;
     private final RepoService rService;
 
@@ -39,7 +40,7 @@ public class FlashcardController {
         flashcard.setCreator(userDetails.getUser());
         fService.persist(flashcard);
         rService.addFlashcard(userDetails.getRepo(), flashcard);
-        LOG.debug("Created {} in user's repo with username {}.", flashcard, userDetails.getUsername());
+        log.debug("Created {} in user's repo with username {}.", flashcard, userDetails.getUsername());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", flashcard.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
@@ -61,12 +62,12 @@ public class FlashcardController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Long id, @RequestBody Flashcard flashcard){
         if (!id.equals(flashcard.getId())) {
-            LOG.info("The flashcard id of the current flashcard does not match id {} .", id);
+            log.info("The flashcard id of the current flashcard does not match id {} .", id);
             return;
         }
         Flashcard originFlashcard = getFlashcard(id);
         fService.update(originFlashcard, flashcard);
-        LOG.info("Updated {}.", flashcard);
+        log.info("Updated {}.", flashcard);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -75,7 +76,7 @@ public class FlashcardController {
     public void remove(@PathVariable Long id){
         Flashcard flashcard = getFlashcard(id);
         fService.remove(flashcard);
-        LOG.info("Removed {}.", flashcard);
+        log.info("Removed {}.", flashcard);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -84,7 +85,7 @@ public class FlashcardController {
     public void restoreFlashcard(@PathVariable Long id) {
         Flashcard flashcard = fService.findById(id);
         fService.restore(flashcard);
-        LOG.info("Restored {}.", flashcard);
+        log.info("Restored {}.", flashcard);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")

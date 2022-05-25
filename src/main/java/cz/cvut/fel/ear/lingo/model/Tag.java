@@ -3,6 +3,10 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -13,6 +17,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity
 public class Tag extends AbstractClass {
 
@@ -36,32 +44,6 @@ public class Tag extends AbstractClass {
     public Tag(String name) {
         this.name = name;
         this.isRemoved = false;
-    }
-
-    public Tag() {}
-
-    public List<Tag> getRelatedTags() {
-        return relatedTags;
-    }
-
-    public List<Flashcard> getFlashcards() {
-        return flashcards;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public Boolean getRemoved() {
-        return isRemoved;
-    }
-
-    public void setRemoved(Boolean removed) {
-        isRemoved = removed;
     }
 
     public void addRelatedTag(Tag tag) {
@@ -116,14 +98,5 @@ public class Tag extends AbstractClass {
         result = 31 * result + (relatedTags != null ? relatedTags.hashCode() : 0);
         result = 31 * result + (flashcards != null ? flashcards.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Tag{" +
-                "name='" + name + '\'' +
-                ", relatedTags=" + relatedTags +
-                ", flashcards=" + flashcards +
-                '}';
     }
 }

@@ -8,6 +8,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.RepoService;
 import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/repo")
 @Validated
 public class RepoController {
 
-    private final static Logger LOG = LoggerFactory.getLogger(RepoController.class);
     private final RepoService rService;
     private final UserService userService;
 
@@ -39,14 +40,14 @@ public class RepoController {
     public Repo getRepo(@PathVariable Long id, @CurrentUser UserDetailsImpl userDetails){
         User user = userService.findById(id);
         if (user == null) {
-            LOG.info("User with id {} not found.", id);
+            log.info("User with id {} not found.", id);
             return null;
         }
         if (userDetails.getUser().isUser() && !userDetails.getUser().getId().equals(id)) {
-            LOG.info("The repository id of the authenticated user does not match id {}.", id);
+            log.info("The repository id of the authenticated user does not match id {}.", id);
             return null;
         }
-        return user.getRepository();
+        return user.getRepo();
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
@@ -68,7 +69,7 @@ public class RepoController {
     public void addFlashcard(@PathVariable Long id, @RequestBody Flashcard flashcard, @CurrentUser UserDetailsImpl userDetails){
         Repo repo = getRepo(id, userDetails);
         rService.addFlashcard(repo, flashcard);
-        LOG.info("Card {} added to Repo {}.", flashcard, id);
+        log.info("Card {} added to Repo {}.", flashcard, id);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
@@ -76,7 +77,7 @@ public class RepoController {
     public void removeFlashcard(@PathVariable Long id, @RequestBody Flashcard flashcard, @CurrentUser UserDetailsImpl userDetails ){
         Repo repo = getRepo(id, userDetails);
         rService.removeFlashcard(repo, flashcard);
-        LOG.info("Card {} deleted from Repo : {}.", flashcard, id);
+        log.info("Card {} deleted from Repo : {}.", flashcard, id);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
@@ -85,8 +86,8 @@ public class RepoController {
         Repo repo = getRepo(id, userDetails);
         if (repo == null) return null;
         if (userDetails.getUser().isUser())
-            return repo.getFlashcardDecks().stream().filter(FlashcardDeck::isPublic).collect(Collectors.toList());
-        return repo.getFlashcardDecks().stream().filter(flashcardDeck -> !flashcardDeck.getRemoved()).collect(Collectors.toList());
+            return repo.getFlashcardDecks().stream().filter(FlashcardDeck::getIsPublic).collect(Collectors.toList());
+        return repo.getFlashcardDecks().stream().filter(flashcardDeck -> !flashcardDeck.getIsRemoved()).collect(Collectors.toList());
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
@@ -95,7 +96,7 @@ public class RepoController {
                                  @CurrentUser UserDetailsImpl userDetails){
         Repo repo = getRepo(id, userDetails);
         rService.addFlashcardDeck(repo, flashcardDeck);
-        LOG.info("Deck {} added to Repo {}.", flashcardDeck, id);
+        log.info("Deck {} added to Repo {}.", flashcardDeck, id);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
@@ -104,6 +105,6 @@ public class RepoController {
                                     @CurrentUser UserDetailsImpl userDetails ){
         Repo repo = getRepo(id, userDetails);
         rService.removeFlashcardDeck(repo, flashcardDeck);
-        LOG.info("Deck {} deleted from Repo : {}.", flashcardDeck, id);
+        log.info("Deck {} deleted from Repo : {}.", flashcardDeck, id);
     }
 }

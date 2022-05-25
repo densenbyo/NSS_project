@@ -6,6 +6,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.FlashcardDeckService;
 import cz.cvut.fel.ear.lingo.services.interfaces.RepoService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/flashcardDeck")
 @Validated
 public class FlashcardDeckController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
     private final FlashcardDeckService fdService;
     private final RepoService rService;
 
@@ -41,7 +42,7 @@ public class FlashcardDeckController {
         flashcardDeck.setCreator(userDetails.getUser());
         fdService.persist(flashcardDeck);
         rService.addFlashcardDeck(userDetails.getRepo(), flashcardDeck);
-        LOG.debug("Created {} in user's repo {}.", flashcardDeck, userDetails.getUsername());
+        log.debug("Created {} in user's repo {}.", flashcardDeck, userDetails.getUsername());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", flashcardDeck.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
@@ -51,7 +52,7 @@ public class FlashcardDeckController {
     public List<FlashcardDeck> getFlashcardDecks(@CurrentUser UserDetailsImpl userDetails) {
         List<FlashcardDeck> flashcardDecks =  fdService.findAll();
         if (userDetails.getUser().isUser()) {
-            return flashcardDecks.stream().filter(FlashcardDeck::isPublic).collect(Collectors.toList());
+            return flashcardDecks.stream().filter(FlashcardDeck::getIsPublic).collect(Collectors.toList());
         }
         return flashcardDecks;
     }
@@ -63,7 +64,7 @@ public class FlashcardDeckController {
         if (userDetails.getUser().isAdmin())
             return flashcardDeck;
         else
-            return (flashcardDeck.isPublic() || flashcardDeck.getCreator().getId().equals(userDetails.getUser().getId()))
+            return (flashcardDeck.getIsPublic() || flashcardDeck.getCreator().getId().equals(userDetails.getUser().getId()))
                     ? flashcardDeck : null;
     }
 
@@ -75,7 +76,7 @@ public class FlashcardDeckController {
         FlashcardDeck originDeck = getFlashcardDeck(id, userDetails);
         if (originDeck != null && originDeck.getId().equals(id)) {
             fdService.update(originDeck, flashcardDeck);
-            LOG.info("Updated {}.", flashcardDeck);
+            log.info("Updated {}.", flashcardDeck);
         }
     }
 
@@ -85,7 +86,7 @@ public class FlashcardDeckController {
     public void removeFlashcardDeck(@PathVariable Long id, @CurrentUser UserDetailsImpl userDetails) {
         FlashcardDeck flashcardDeck = getFlashcardDeck(id, userDetails);
         fdService.remove(flashcardDeck);
-        LOG.info("Removed {}.", flashcardDeck);
+        log.info("Removed {}.", flashcardDeck);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -94,7 +95,7 @@ public class FlashcardDeckController {
     public void restoreFlashcardDeck(@PathVariable Long id) {
         FlashcardDeck flashcardDeck = fdService.find(id);
         fdService.restore(flashcardDeck);
-        LOG.info("Restored {}.", flashcardDeck);
+        log.info("Restored {}.", flashcardDeck);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
@@ -103,7 +104,7 @@ public class FlashcardDeckController {
     public void addCard(@PathVariable Long id, @RequestBody Flashcard flashcard, @CurrentUser UserDetailsImpl userDetails) {
         FlashcardDeck flashcardDeck = getFlashcardDeck(id, userDetails);
         fdService.addFlashcard(flashcardDeck, flashcard);
-        LOG.debug("Card {} added into deck {}.", flashcard, flashcardDeck);
+        log.debug("Card {} added into deck {}.", flashcard, flashcardDeck);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -112,6 +113,6 @@ public class FlashcardDeckController {
     public void removeCard(@PathVariable Long id, @RequestBody Flashcard flashcard, @CurrentUser UserDetailsImpl userDetails) {
         FlashcardDeck flashcardDeck = getFlashcardDeck(id, userDetails);
         fdService.removeFlashcard(flashcardDeck, flashcard);
-        LOG.debug("Card {} removed from deck {}.", flashcard, flashcardDeck);
+        log.debug("Card {} removed from deck {}.", flashcard, flashcardDeck);
     }
 }

@@ -10,6 +10,7 @@ import cz.cvut.fel.ear.lingo.security.model.Response;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.KafkaService;
 import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/users")
 @CrossOrigin(origins = "http://localhost:3000/")
 public class UserController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
     private final UserService userService;
     private final KafkaService kafkaService;
 
@@ -54,7 +55,7 @@ public class UserController {
         User user = new User(request.getUsername(), request.getMail(), request.getPassword());
         if (role.equals("ADMIN")) user.setRole(UserRole.ADMIN);
         userService.persist(user);
-        LOG.debug("Admin added user {} successfully.", user);
+        log.debug("Admin added user {} successfully.", user);
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/all");
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
@@ -90,11 +91,11 @@ public class UserController {
     public void blockUser(@PathVariable Long id){
         User user = userService.findById(id);
         if (user == null) {
-            LOG.info("User with id : {} not found.", id);
+            log.info("User with id : {} not found.", id);
             return;
         }
         userService.block(user);
-        LOG.info("Blocked {}.", user);
+        log.info("Blocked {}.", user);
         userService.sendMessageToKafka("Admin {\nBlocked user: " + user.getId() + "\n}");
     }
 
@@ -104,11 +105,11 @@ public class UserController {
     public void unblockUser(@PathVariable Long id){
         User user = userService.findById(id);
         if (user == null) {
-            LOG.info("User with id : {} not found.", id);
+            log.info("User with id : {} not found.", id);
             return;
         }
         userService.unblock(user);
-        LOG.info("Unblocked {}.", user);
+        log.info("Unblocked {}.", user);
         userService.sendMessageToKafka("Admin {\nUnblocked user: " + user.getId() + "\n}");
     }
 
@@ -117,11 +118,11 @@ public class UserController {
     public void setRole(@PathVariable Long id, @PathVariable String role){
         User user = userService.findById(id);
         if (user == null) {
-            LOG.info("User with id : {} not found.", id);
+            log.info("User with id : {} not found.", id);
             return;
         }
         userService.setRole(role, user);
-        LOG.info("The role of the user with id: {} has changed.", id);
+        log.info("The role of the user with id: {} has changed.", id);
         userService.sendMessageToKafka("Admin {\nUser: " + user.getId() + "\n" + "Role: " + role + "\n}");
     }
 
@@ -130,11 +131,11 @@ public class UserController {
     public void updateUser(@PathVariable Long id, @RequestBody(required = false) User user){
         final User originalUser = userService.findById(id);
         if (originalUser == null) {
-            LOG.info("User identifier in the data does not match the one in the request URL.");
+            log.info("User identifier in the data does not match the one in the request URL.");
             return;
         }
         userService.update(originalUser, user);
-        LOG.info("{} updated.", user);
+        log.info("{} updated.", user);
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN') || #id == authentication.principal.id")
@@ -142,7 +143,7 @@ public class UserController {
     public void removeUser(@PathVariable Long id) {
         final User user = userService.findById(id);
         if (user == null) {
-            LOG.info("User with id : {} not found.", id);
+            log.info("User with id : {} not found.", id);
             return;
         }
         userService.remove(user);
@@ -154,7 +155,7 @@ public class UserController {
     public void restoreUser(@PathVariable Long id) {
         final User user = userService.find(id);
         if (user == null) {
-            LOG.info("User with id : {} not found.", id);
+            log.info("User with id : {} not found.", id);
             return;
         }
         userService.restore(user);

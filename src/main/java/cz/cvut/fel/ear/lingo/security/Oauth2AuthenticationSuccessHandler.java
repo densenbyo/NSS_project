@@ -45,7 +45,7 @@ public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccess
             User user = new User(username, email, "");
             service.persist(user);
         }
-        final LoginStatus loginStatus = new LoginStatus(true, authentication.isAuthenticated(), username, null);
+        final LoginStatus loginStatus = new LoginStatus(true, username, null, authentication.isAuthenticated());
         response.setStatus(HttpStatus.OK.value());
         ResponseEntity<?> entity = ResponseEntity.ok(new JwtAuthenticationResponse(loginService.login(username, "")));
         String json = new ObjectMapper().writeValueAsString(entity.getBody());

@@ -3,12 +3,15 @@ package cz.cvut.fel.ear.lingo.security.model;
 import cz.cvut.fel.ear.lingo.model.Repo;
 import cz.cvut.fel.ear.lingo.model.User;
 import cz.cvut.fel.ear.lingo.model.enums.UserRole;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 
+@Getter
 public class UserDetailsImpl implements UserDetails {
 
     private User user;
@@ -69,27 +72,8 @@ public class UserDetailsImpl implements UserDetails {
         return true;
     }
 
-    public User getUser() {
-        return user;
-    }
-
     public void eraseCredentials() {
         user.erasePassword();
-    }
-
-    public Long getId() {
-        return user.getId();
-    }
-
-    public UserRole getRole(){
-        return user.getRole();
-    }
-
-    public String getRepoId(){
-        return user.getRepository().getId().toString();
-    }
-    public Repo getRepo(){
-        return user.getRepository();
     }
 
     public List<String> getDetails(){

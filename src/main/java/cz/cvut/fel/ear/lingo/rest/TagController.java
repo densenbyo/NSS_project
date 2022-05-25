@@ -6,6 +6,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.FlashcardService;
 import cz.cvut.fel.ear.lingo.services.interfaces.TagService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/tag")
 @Validated
 public class TagController {
 
-    private final static Logger LOG = LoggerFactory.getLogger(RepoController.class);
     private final TagService tagService;
     private final FlashcardService fService;
 
@@ -56,7 +57,7 @@ public class TagController {
         if (tag != null){
             return tag.getFlashcards().stream().filter(flashcard -> !flashcard.isRemoved()).collect(Collectors.toList());
         }
-        LOG.info("Tag with id {} not found.", id);
+        log.info("Tag with id {} not found.", id);
         return null;
     }
 
@@ -66,7 +67,7 @@ public class TagController {
     public void updateTag(@PathVariable Long id, @RequestBody Tag tag){
         Tag originalTag = getTag(id);
         tagService.update(originalTag, tag);
-        LOG.info("{} updated.", tag);
+        log.info("{} updated.", tag);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
@@ -75,7 +76,7 @@ public class TagController {
     public void removeTag(@PathVariable Long id){
         Tag tag = getTag(id);
         tagService.remove(tag);
-        LOG.info("{} deleted", tag);
+        log.info("{} deleted", tag);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
@@ -107,7 +108,7 @@ public class TagController {
         if (flashcard.getCreator().getId().equals(userDetails.getId()) || userDetails.getUser().isAdmin()) {
             Tag tag = getTag(id);
             tagService.addFlashcard(tag, flashcard);
-            LOG.info("To flashcard {} was added new tag {}.", flashcard, tag);
+            log.info("To flashcard {} was added new tag {}.", flashcard, tag);
         }
     }
 
@@ -118,6 +119,6 @@ public class TagController {
         Flashcard flashcard = fService.findById(idCard);
         Tag tag = getTag(id);
         tagService.removeFlashcard(tag, flashcard);
-        LOG.info("To flashcard {} was removed tag {}.", flashcard, tag);
+        log.info("To flashcard {} was removed tag {}.", flashcard, tag);
     }
 }

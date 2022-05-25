@@ -4,12 +4,18 @@ import com.fasterxml.jackson.annotation.*;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @NamedNativeQuery(
         name = "findByWord",
@@ -74,46 +80,6 @@ public class Flashcard extends AbstractClass {
         this.isRemoved = false;
     }
 
-    public void setRemoved(boolean removed) {
-        isRemoved = removed;
-    }
-
-    public boolean isRemoved() {
-        return isRemoved;
-    }
-
-    public String getWord(){
-        return word;
-    }
-
-    public void setWord(String name){
-        this.word = name;
-    }
-
-    public String getTranslation(){
-        return translation;
-    }
-
-    public void setTranslation(String translation){
-        this.translation = translation;
-    }
-
-    public List<FlashcardProgress> getFlashcardProgresses() {
-        return flashcardProgresses;
-    }
-
-    public List<AbstractContent> getContents() {
-        return contents;
-    }
-
-    public User getCreator() {
-        return creator;
-    }
-
-    public void setCreator(User creator) {
-        this.creator = creator;
-    }
-
     public void addContent(AbstractContent abstractContent){
         Objects.requireNonNull(abstractContent);
         if (contents == null)
@@ -150,17 +116,5 @@ public class Flashcard extends AbstractClass {
         result = 31 * result + (flashcardProgresses != null ? flashcardProgresses.hashCode() : 0);
         result = 31 * result + (creator != null ? creator.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Flashcard{" +
-                "word='" + word + '\'' +
-                ", isRemoved=" + isRemoved +
-                ", translation='" + translation + '\'' +
-                ", contents=" + contents +
-                ", flashcardProgresses=" + flashcardProgresses +
-                ", creator=" + creator +
-                '}';
     }
 }

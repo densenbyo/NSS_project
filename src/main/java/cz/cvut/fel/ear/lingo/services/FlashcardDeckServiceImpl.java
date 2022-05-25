@@ -32,7 +32,7 @@ public class FlashcardDeckServiceImpl implements FlashcardDeckService {
     @Transactional
     public void remove(FlashcardDeck flashcardDeck) {
         Objects.requireNonNull(flashcardDeck);
-        flashcardDeck.setRemoved(true);
+        flashcardDeck.setIsRemoved(true);
         flashcardDeckDao.update(flashcardDeck);
     }
 
@@ -40,7 +40,7 @@ public class FlashcardDeckServiceImpl implements FlashcardDeckService {
     @Transactional
     public void restore(FlashcardDeck flashcardDeck) {
         Objects.requireNonNull(flashcardDeck);
-        flashcardDeck.setRemoved(false);
+        flashcardDeck.setIsRemoved(false);
         flashcardDeckDao.update(flashcardDeck);
     }
 
@@ -48,10 +48,10 @@ public class FlashcardDeckServiceImpl implements FlashcardDeckService {
     @Transactional
     public void update(FlashcardDeck originDeck, FlashcardDeck flashcardDeck) {
         Objects.requireNonNull(flashcardDeck);
-        if (!flashcardDeck.getRemoved()) {
+        if (!flashcardDeck.getIsRemoved()) {
             originDeck.setName(flashcardDeck.getName());
             originDeck.setDescription(flashcardDeck.getDescription());
-            originDeck.setPublic(flashcardDeck.isPublic());
+            originDeck.setIsPublic(flashcardDeck.getIsPublic());
             flashcardDeckDao.update(originDeck);
         }
     }

@@ -3,6 +3,9 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.*;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +13,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
+@Getter
+@Setter
+@ToString
 @Entity
 public class FlashcardDeck extends AbstractClass {
 
@@ -55,50 +61,6 @@ public class FlashcardDeck extends AbstractClass {
         this.isRemoved = false;
     }
 
-    public boolean isPublic() {
-        return isPublic;
-    }
-
-    public void setPublic(boolean aPublic) {
-        isPublic = aPublic;
-    }
-
-    public List<Flashcard> getFlashcards() {
-        return flashcards;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Boolean getRemoved() {
-        return isRemoved;
-    }
-
-    public void setRemoved(Boolean removed) {
-        isRemoved = removed;
-    }
-
-    public User getCreator() {
-        return creator;
-    }
-
-    public void setCreator(User creator) {
-        this.creator = creator;
-    }
-
     public void addFlashcard(Flashcard flashcard){
         if (flashcards == null)
             flashcards = new ArrayList<>();
@@ -141,17 +103,5 @@ public class FlashcardDeck extends AbstractClass {
         result = 31 * result + isRemoved.hashCode();
         result = 31 * result + (flashcards != null ? flashcards.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "FlashcardDeck{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", isPublic=" + isPublic +
-                ", isRemoved=" + isRemoved +
-                ", flashcards=" + flashcards +
-                ", creator=" + creator +
-                '}';
     }
 }

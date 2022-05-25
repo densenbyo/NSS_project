@@ -2,6 +2,7 @@ package cz.cvut.fel.ear.lingo.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cz.cvut.fel.ear.lingo.security.model.LoginStatus;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,9 @@ import java.io.IOException;
 /**
  * Returns info about authentication failure.
  */
+@Slf4j
 @Service
 public class AuthenticationFailure implements AuthenticationFailureHandler {
-
-    private static final Logger LOG = LoggerFactory.getLogger(AuthenticationFailure.class);
 
     private final ObjectMapper mapper;
 
@@ -31,8 +31,8 @@ public class AuthenticationFailure implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                         AuthenticationException e) throws IOException {
-        LOG.debug("Login failed for user {}.", httpServletRequest.getParameter(SecurityConstants.USERNAME_PARAM));
-        final LoginStatus status = new LoginStatus(false, false, null, e.getMessage());
+        log.debug("Login failed for user {}.", httpServletRequest.getParameter(SecurityConstants.USERNAME_PARAM));
+        final LoginStatus status = new LoginStatus(false, null, e.getMessage(), false);
         mapper.writeValue(httpServletResponse.getOutputStream(), status);
     }
 }

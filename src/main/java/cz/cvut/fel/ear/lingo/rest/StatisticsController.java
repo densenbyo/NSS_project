@@ -6,6 +6,7 @@ import cz.cvut.fel.ear.lingo.security.CurrentUser;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import cz.cvut.fel.ear.lingo.services.interfaces.StatisticService;
 import cz.cvut.fel.ear.lingo.services.interfaces.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/statistics")
 @Validated
 public class StatisticsController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(StatisticsController.class);
     private final StatisticService statService;
     private final UserService userService;
 
@@ -37,11 +38,11 @@ public class StatisticsController {
     public Statistic getStatistics(@PathVariable Long idUser, @CurrentUser UserDetailsImpl userDetails){
         User user = userService.findById(idUser);
         if (user == null) {
-            LOG.info("The user with id {} not found.", idUser);
+            log.info("The user with id {} not found.", idUser);
             return null;
         }
         if (userDetails.getUser().isUser() && !user.getStatistic().getId().equals(userDetails.getUser().getStatistic().getId())) {
-            LOG.info("The users id of the authenticated user does not match id {}.", idUser);
+            log.info("The users id of the authenticated user does not match id {}.", idUser);
             return null;
         }
         return user.getStatistic();

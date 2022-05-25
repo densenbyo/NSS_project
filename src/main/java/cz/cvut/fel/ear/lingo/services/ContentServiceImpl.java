@@ -5,6 +5,7 @@ import cz.cvut.fel.ear.lingo.exception.NotFoundException;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import cz.cvut.fel.ear.lingo.rest.StatisticsController;
 import cz.cvut.fel.ear.lingo.services.interfaces.ContentService;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,11 +17,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Slf4j
 @Service
 @Transactional
 public class ContentServiceImpl implements ContentService {
 
-    private static final Logger LOG = LoggerFactory.getLogger(StatisticsController.class);
     private final ContentDao repo;
 
     public ContentServiceImpl(ContentDao repo) {
@@ -36,7 +37,7 @@ public class ContentServiceImpl implements ContentService {
     @Override
     public void deleteById(@NotNull Long id) {
         if(!repo.existsById(id)) {
-            LOG.debug("Cant find context content with id: " + id + " to delete");
+            log.debug("Cant find context content with id: " + id + " to delete");
         }
         repo.deleteById(id);
     }
@@ -47,7 +48,7 @@ public class ContentServiceImpl implements ContentService {
         if(content.isPresent()) {
             return content.get();
         } else {
-            LOG.debug("Cant find audio content with id: " + id);
+            log.debug("Cant find audio content with id: " + id);
             return null;
         }
     }
@@ -58,7 +59,7 @@ public class ContentServiceImpl implements ContentService {
         if(content.isPresent()) {
             return content.get();
         } else {
-            LOG.debug("Cant find audio content with id: " + con_id);
+            log.debug("Cant find audio content with id: " + con_id);
             return null;
         }
     }

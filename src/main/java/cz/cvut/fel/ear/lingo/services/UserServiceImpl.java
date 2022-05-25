@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
     public void remove(User user) {
         Objects.requireNonNull(user);
         clearStatistic(user.getStatistic());
-        user.setRemoved(true);
+        user.setIsRemoved(true);
         userDao.update(user);
     }
 
@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void restore(User user) {
         Objects.requireNonNull(user);
-        user.setRemoved(false);
+        user.setIsRemoved(false);
         userDao.update(user);
     }
 
@@ -95,7 +95,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void block(User user) {
         Objects.requireNonNull(user);
-        user.setActive(false);
+        user.setIsActive(false);
         userDao.update(user);
     }
 
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void unblock(User user) {
         Objects.requireNonNull(user);
-        user.setActive(true);
+        user.setIsActive(true);
         userDao.update(user);
     }
 
