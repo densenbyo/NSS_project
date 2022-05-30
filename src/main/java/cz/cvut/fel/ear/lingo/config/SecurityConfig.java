@@ -1,9 +1,9 @@
 package cz.cvut.fel.ear.lingo.config;
 
-import cz.cvut.fel.ear.lingo.security.Oauth2AuthenticationSuccessHandler;
-import cz.cvut.fel.ear.lingo.security.SecurityConstants;
-import cz.cvut.fel.ear.lingo.security.jwt.JwtAuthenticationEntryPoint;
-import cz.cvut.fel.ear.lingo.security.jwt.JwtAuthenticationFilter;
+import cz.cvut.fel.ear.lingo.user_service.security.Oauth2AuthenticationSuccessHandler;
+import cz.cvut.fel.ear.lingo.user_service.security.SecurityConstants;
+import cz.cvut.fel.ear.lingo.user_service.security.jwt.JwtAuthenticationEntryPoint;
+import cz.cvut.fel.ear.lingo.user_service.security.jwt.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

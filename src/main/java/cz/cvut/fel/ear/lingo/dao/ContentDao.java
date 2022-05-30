@@ -1,19 +1,18 @@
 package cz.cvut.fel.ear.lingo.dao;
 
-import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
+import cz.cvut.fel.ear.lingo.content_service.entity.AbstractContentEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ContentDao extends CrudRepository<AbstractContent, Long> {
+public interface ContentDao extends CrudRepository<AbstractContentEntity, Long> {
 
-    Optional<AbstractContent> findById(Long id);
+    Optional<AbstractContentEntity> findById(Long id);
 
-    List<AbstractContent> findAll();
+    List<AbstractContentEntity> findAll();
 
-    Optional<AbstractContent> findByIdAndCreatorId(Long con_id, Long cre_id);
+    Optional<AbstractContentEntity> findByIdAndCreatorId(Long con_id, Long cre_id);
 }

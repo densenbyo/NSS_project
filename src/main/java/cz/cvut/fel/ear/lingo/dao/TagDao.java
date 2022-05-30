@@ -1,6 +1,6 @@
 package cz.cvut.fel.ear.lingo.dao;
 
-import cz.cvut.fel.ear.lingo.model.Tag;
+import cz.cvut.fel.ear.lingo.tag_service.entity.TagEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.PersistenceException;
@@ -8,16 +8,16 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class TagDao extends BaseDao<Tag> {
+public class TagDao extends BaseDao<TagEntity> {
 
     protected TagDao() {
-        super(Tag.class);
+        super(TagEntity.class);
     }
 
     @Override
-    public Tag find(Long id) {
+    public TagEntity find(Long id) {
         try {
-            return em.createQuery("SELECT t FROM Tag t WHERE t.id = :id", Tag.class)
+            return em.createQuery("SELECT t FROM TagEntity t WHERE t.id = :id", TagEntity.class)
                     .setParameter("id", id)
                     .getSingleResult();
         } catch (RuntimeException e) {
@@ -26,19 +26,19 @@ public class TagDao extends BaseDao<Tag> {
     }
 
     @Override
-    public List<Tag> findAll() {
+    public List<TagEntity> findAll() {
         try {
-            return em.createQuery("SELECT t FROM Tag t", Tag.class)
+            return em.createQuery("SELECT t FROM TagEntity t", TagEntity.class)
                     .getResultList();
         } catch (RuntimeException e) {
             throw new PersistenceException(e);
         }
     }
 
-    public Tag findByName(String name) {
+    public TagEntity findByName(String name) {
         Objects.requireNonNull(name);
         try {
-            return em.createQuery("SELECT t FROM Tag t WHERE t.name = :name", Tag.class)
+            return em.createQuery("SELECT t FROM TagEntity t WHERE t.name = :name", TagEntity.class)
                     .setParameter("name", name)
                     .getSingleResult();
         } catch (RuntimeException e) {
@@ -46,11 +46,11 @@ public class TagDao extends BaseDao<Tag> {
         }
     }
 
-    public List<Tag> findAllRelatedTag(Long id) {
+    public List<TagEntity> findAllRelatedTag(Long id) {
         Objects.requireNonNull(id);
         try {
             return em.createQuery(
-                            "SELECT t FROM Tag t JOIN t.relatedTags r WHERE r.id = :id", Tag.class)
+                            "SELECT t FROM TagEntity t JOIN t.relatedTags r WHERE r.id = :id", TagEntity.class)
                     .setParameter("id", id)
                     .getResultList();
         } catch (RuntimeException e) {

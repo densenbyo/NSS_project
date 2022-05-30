@@ -1,6 +1,6 @@
 package cz.cvut.fel.ear.lingo.dao;
 
-import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
+import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
-public class BaseDao<T extends AbstractClass> implements GenericDao<T> {
+public class BaseDao<T extends AbstractClassEntity> implements GenericDao<T> {
 
     @PersistenceContext
     protected EntityManager em;
