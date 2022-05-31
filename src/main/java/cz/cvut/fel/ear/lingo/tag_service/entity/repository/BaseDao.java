@@ -1,4 +1,4 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.tag_service.entity.repository;
 
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 

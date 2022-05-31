@@ -37,20 +37,21 @@ public class FlashcardController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public FlashcardModel getFlashcard(@Valid @PathVariable Long id){
+    public FlashcardModel getFlashcard(@Valid @PathVariable Long id) {
         return flashcardAdapter.getFlashcardById(id);
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<FlashcardModel> getFlashcards(){
+    public List<FlashcardModel> getFlashcards() {
         return flashcardAdapter.getListOfFlashcard();
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Void> update(@Valid @PathVariable Long id,@Valid @RequestBody FlashcardModel flashcardModel){
+    public ResponseEntity<Void> update(@Valid @PathVariable Long id,
+                                       @Valid @RequestBody FlashcardModel flashcardModel) {
         if (!id.equals(flashcardModel.getId())) {
             log.info("The flashcard id of the current flashcard does not match id {} .", id);
             return ResponseEntity.badRequest().build();
@@ -70,7 +71,7 @@ public class FlashcardController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    @PatchMapping(value ="/{id}/restore")
+    @PatchMapping(value = "/{id}/restore")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> restoreFlashcard(@Valid @PathVariable Long id) {
         flashcardAdapter.restoreFlashcard(id);
@@ -79,7 +80,7 @@ public class FlashcardController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    @GetMapping(value = "/find/{word}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/find/{word}", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<FlashcardModel> findByWord(@PathVariable String word) {
         return flashcardAdapter.getFlashcardsByWord(word);
     }

@@ -29,7 +29,7 @@ public class StatisticEntity extends AbstractClassEntity {
 
     @OneToMany
     @JsonView(Views.Public.class)
-    private List<FlashcardProgressEntity> flashcardProgressEntities;
+    private List<FlashcardProgressEntity> flashcardProgresses;
 
     public StatisticEntity() {
         this.achievements = new ArrayList<>();
@@ -37,9 +37,9 @@ public class StatisticEntity extends AbstractClassEntity {
 
     public List<FlashcardProgressEntity> getProgressesOfDeck(FlashcardDeckEntity deck) {
         List<FlashcardProgressEntity> progresses = new ArrayList<>();
-        for(FlashcardEntity f : deck.getFlashcardEntities()) {
-            if(contains(f)) {
-                progresses.add(flashcardProgressEntities.stream()
+        for (FlashcardEntity f : deck.getFlashcards()) {
+            if (contains(f)) {
+                progresses.add(flashcardProgresses.stream()
                         .filter(v -> v.getFlashcardEntity().equals(f))
                         .findFirst()
                         .get());
@@ -52,37 +52,37 @@ public class StatisticEntity extends AbstractClassEntity {
     }
 
     public Boolean contains(FlashcardEntity flashcardEntity) {
-        return flashcardProgressEntities.stream().map(FlashcardProgressEntity::getFlashcardEntity).anyMatch(v -> v.equals(flashcardEntity));
+        return flashcardProgresses.stream().map(FlashcardProgressEntity::getFlashcardEntity).anyMatch(v -> v.equals(flashcardEntity));
     }
 
     public void addFlashcard(FlashcardEntity flashcardEntity) {
-        flashcardProgressEntities.add(
+        flashcardProgresses.add(
                 new FlashcardProgressEntity(flashcardEntity)
         );
     }
 
     public void removeFlashcard(FlashcardEntity flashcardEntity) {
         int i = -1;
-        for (FlashcardProgressEntity fp : flashcardProgressEntities) {
-            if(fp.getFlashcardEntity().equals(flashcardEntity)) {
-                i = flashcardProgressEntities.indexOf(fp);
+        for (FlashcardProgressEntity fp : flashcardProgresses) {
+            if (fp.getFlashcardEntity().equals(flashcardEntity)) {
+                i = flashcardProgresses.indexOf(fp);
             }
         }
-        if(i != -1) {
-            flashcardProgressEntities.remove(i);
+        if (i != -1) {
+            flashcardProgresses.remove(i);
         }
     }
 
-    public void addAchievements(String toAdd){
+    public void addAchievements(String toAdd) {
         Objects.requireNonNull(toAdd);
         if (achievements == null)
             achievements = new ArrayList<>();
         achievements.add(toAdd);
     }
 
-    public void removeAchievements(String toDelete){
+    public void removeAchievements(String toDelete) {
         Objects.requireNonNull(toDelete);
-        if(achievements == null)
+        if (achievements == null)
             return;
         achievements.remove(toDelete);
     }
@@ -94,13 +94,13 @@ public class StatisticEntity extends AbstractClassEntity {
         StatisticEntity statisticEntity = (StatisticEntity) o;
         if (!Objects.equals(achievements, statisticEntity.achievements))
             return false;
-        return Objects.equals(flashcardProgressEntities, statisticEntity.flashcardProgressEntities);
+        return Objects.equals(flashcardProgresses, statisticEntity.flashcardProgresses);
     }
 
     @Override
     public int hashCode() {
         int result = achievements != null ? achievements.hashCode() : 0;
-        result = 31 * result + (flashcardProgressEntities != null ? flashcardProgressEntities.hashCode() : 0);
+        result = 31 * result + (flashcardProgresses != null ? flashcardProgresses.hashCode() : 0);
         return result;
     }
 }

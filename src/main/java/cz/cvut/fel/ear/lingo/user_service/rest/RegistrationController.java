@@ -1,8 +1,10 @@
 package cz.cvut.fel.ear.lingo.user_service.rest;
 
+import cz.cvut.fel.ear.lingo.repo_service.entity.repository.RepoEntityRepository;
 import cz.cvut.fel.ear.lingo.statistic_service.entity.StatisticEntity;
 import cz.cvut.fel.ear.lingo.repo_service.entity.RepoEntity;
 import cz.cvut.fel.ear.lingo.rest.RestUtils;
+import cz.cvut.fel.ear.lingo.statistic_service.entity.repository.StatisticEntityRepository;
 import cz.cvut.fel.ear.lingo.user_service.entity.UserEntity;
 import cz.cvut.fel.ear.lingo.user_service.entity.enumeration.UserRole;
 import cz.cvut.fel.ear.lingo.user_service.entity.repository.UserEntityRepository;
@@ -14,6 +16,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RegistrationController {
 
     private final UserEntityRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
     @PostMapping(value = "/registration", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> register(@RequestBody RegistrationRequest request) {
@@ -37,11 +41,12 @@ public class RegistrationController {
                 .mail(request.getMail())
                 .password(request.getPassword())
                 .repo(new RepoEntity())
-                .statisticEntity(new StatisticEntity())
+                .statistic(new StatisticEntity())
                 .isActive(true)
                 .isRemoved(false)
                 .role(UserRole.USER)
                 .build();
+        user.encodePassword(passwordEncoder);
         repository.save(user);
         log.debug("User {} successfully registered.", user);
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/current");

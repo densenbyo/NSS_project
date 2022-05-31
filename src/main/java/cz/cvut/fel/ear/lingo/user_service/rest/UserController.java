@@ -33,8 +33,8 @@ public class UserController {
     // todo check it!!
     @GetMapping(value = "/current", produces = MediaType.APPLICATION_JSON_VALUE)
     @JsonView(Views.Public.class)
-    public UserEntity getCurrent(@CurrentUser UserDetailsImpl userDetails) {
-        return userDetails.getUser();
+    public UserModel getCurrent(@CurrentUser UserDetailsImpl userDetails) {
+        return userAdapter.getCurrentUser(userDetails.getUser());
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
@@ -64,7 +64,6 @@ public class UserController {
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PatchMapping(value = "/{id}/block")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> blockUser(@Valid @PathVariable Long id) {
         userAdapter.block(id);
         //        userService.sendMessageToKafka("Admin {\nBlocked user with id: " + id + "\n}");
@@ -73,7 +72,6 @@ public class UserController {
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @PatchMapping(value = "/{id}/unblock")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> unblockUser(@Valid @PathVariable Long id) {
         userAdapter.unblock(id);
 //        userService.sendMessageToKafka("Admin {\nUnblocked user: " + user.getId() + "\n}");

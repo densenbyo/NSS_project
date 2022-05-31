@@ -1,5 +1,7 @@
 package cz.cvut.fel.ear.lingo.user_service.security.model;
 
+import cz.cvut.fel.ear.lingo.repo_service.domain.Repo;
+import cz.cvut.fel.ear.lingo.repo_service.entity.RepoEntity;
 import cz.cvut.fel.ear.lingo.user_service.entity.UserEntity;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
@@ -53,7 +55,7 @@ public class UserDetailsImpl implements UserDetails {
         return user.getId();
     }
 
-    public Repo getRepo(){
+    public RepoEntity getRepo(){
         return user.getRepo();
     }
 

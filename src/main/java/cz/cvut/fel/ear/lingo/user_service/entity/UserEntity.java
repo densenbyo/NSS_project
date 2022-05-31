@@ -2,12 +2,15 @@ package cz.cvut.fel.ear.lingo.user_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.flashcard_service.entity.FlashcardEntity;
-import cz.cvut.fel.ear.lingo.statistic_service.entity.StatisticEntity;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 import cz.cvut.fel.ear.lingo.model.util.Views;
 import cz.cvut.fel.ear.lingo.repo_service.entity.RepoEntity;
+import cz.cvut.fel.ear.lingo.statistic_service.entity.StatisticEntity;
 import cz.cvut.fel.ear.lingo.user_service.entity.enumeration.UserRole;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
@@ -50,21 +53,21 @@ public class UserEntity extends AbstractClassEntity {
     @JsonView(Views.Public.class)
     private UserRole role;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     private RepoEntity repo;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JsonView(Views.Public.class)
-    private StatisticEntity statisticEntity;
+    private StatisticEntity statistic;
 
     public void addFlashcard(FlashcardEntity flashcardEntity) {
         repo.addFlashcard(flashcardEntity);
-        statisticEntity.addFlashcard(flashcardEntity);
+        statistic.addFlashcard(flashcardEntity);
     }
 
     public void removeFlashcard(FlashcardEntity flashcardEntity) {
         repo.removeFlashcard(flashcardEntity);
-        statisticEntity.removeFlashcard(flashcardEntity);
+        statistic.removeFlashcard(flashcardEntity);
     }
 
     public void encodePassword(PasswordEncoder encoder) {

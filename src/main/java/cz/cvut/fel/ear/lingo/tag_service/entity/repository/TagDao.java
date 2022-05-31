@@ -1,4 +1,4 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.tag_service.entity.repository;
 
 import cz.cvut.fel.ear.lingo.tag_service.entity.TagEntity;
 import org.springframework.stereotype.Repository;
@@ -50,7 +50,7 @@ public class TagDao extends BaseDao<TagEntity> {
         Objects.requireNonNull(id);
         try {
             return em.createQuery(
-                            "SELECT t FROM TagEntity t JOIN t.relatedTags r WHERE r.id = :id", TagEntity.class)
+                            "SELECT t FROM TagEntity t JOIN t.relatedTagEntities r WHERE r.id = :id", TagEntity.class)
                     .setParameter("id", id)
                     .getResultList();
         } catch (RuntimeException e) {

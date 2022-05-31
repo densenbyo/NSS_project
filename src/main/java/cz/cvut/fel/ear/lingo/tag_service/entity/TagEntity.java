@@ -31,7 +31,7 @@ public class TagEntity extends AbstractClassEntity {
     private String name;
 
     @ManyToMany
-    private List<TagEntity> relatedTagEntities;
+    private List<TagEntity> relatedTags;
 
     @ManyToMany
     @JsonView(Views.Public.class)
@@ -42,23 +42,18 @@ public class TagEntity extends AbstractClassEntity {
     @JsonView(Views.Public.class)
     private Boolean isRemoved;
 
-    public TagEntity(String name) {
-        this.name = name;
-        this.isRemoved = false;
-    }
-
     public void addRelatedTag(TagEntity tagEntity) {
         Objects.requireNonNull(tagEntity);
-        if (relatedTagEntities == null)
-            relatedTagEntities = new ArrayList<>();
-        relatedTagEntities.add(tagEntity);
+        if (relatedTags == null)
+            relatedTags = new ArrayList<>();
+        relatedTags.add(tagEntity);
     }
 
     public void removeRelatedTag(TagEntity tagEntity) {
         Objects.requireNonNull(tagEntity);
-        if(relatedTagEntities == null || tagEntity.relatedTagEntities == null)
+        if(relatedTags == null || tagEntity.relatedTags == null)
             return;
-        relatedTagEntities.remove(tagEntity);
+        relatedTags.remove(tagEntity);
     }
 
     public void addFlashcard(FlashcardEntity flashcardEntity) {
@@ -89,14 +84,14 @@ public class TagEntity extends AbstractClassEntity {
         if (o == null || getClass() != o.getClass()) return false;
         TagEntity tagEntity = (TagEntity) o;
         if (!Objects.equals(name, tagEntity.name)) return false;
-        if (!Objects.equals(relatedTagEntities, tagEntity.relatedTagEntities)) return false;
+        if (!Objects.equals(relatedTags, tagEntity.relatedTags)) return false;
         return Objects.equals(flashcardEntities, tagEntity.flashcardEntities);
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (relatedTagEntities != null ? relatedTagEntities.hashCode() : 0);
+        result = 31 * result + (relatedTags != null ? relatedTags.hashCode() : 0);
         result = 31 * result + (flashcardEntities != null ? flashcardEntities.hashCode() : 0);
         return result;
     }

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 import cz.cvut.fel.ear.lingo.model.util.Views;
 import cz.cvut.fel.ear.lingo.user_service.entity.UserEntity;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

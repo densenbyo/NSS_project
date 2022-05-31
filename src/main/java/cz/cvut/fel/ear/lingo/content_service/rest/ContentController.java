@@ -29,28 +29,32 @@ public class ContentController {
     private final ContentAdapter contentAdapter;
 
     @PostMapping(value = "/audio", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveAudio(@RequestBody AudioContentModel content, @CurrentUser UserDetailsImpl userDetails) {
+    public ResponseEntity<Void> saveAudio(@Valid @RequestBody AudioContentModel content,
+                                          @CurrentUser UserDetailsImpl userDetails) {
         contentAdapter.saveAudioContent(content, userDetails.getUser().getId());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", content.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
     @PostMapping(value = "/image", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveImage(@RequestBody ImageContentModel content, @CurrentUser UserDetailsImpl userDetails) {
+    public ResponseEntity<Void> saveImage(@Valid @RequestBody ImageContentModel content,
+                                          @CurrentUser UserDetailsImpl userDetails) {
         contentAdapter.saveImageContent(content, userDetails.getUser().getId());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", content.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
     @PostMapping(value = "/mnemonic", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveMnemonic(@RequestBody MnemonicContentModel content, @CurrentUser UserDetailsImpl userDetails) {
+    public ResponseEntity<Void> saveMnemonic(@Valid @RequestBody MnemonicContentModel content,
+                                             @CurrentUser UserDetailsImpl userDetails) {
         contentAdapter.saveMnemonicContent(content, userDetails.getUser().getId());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", content.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 
     @PostMapping(value = "/context", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveContext(@RequestBody ContextSentenceContentModel content, @CurrentUser UserDetailsImpl userDetails) {
+    public ResponseEntity<Void> saveContext(@Valid @RequestBody ContextSentenceContentModel content,
+                                            @CurrentUser UserDetailsImpl userDetails) {
         contentAdapter.saveContextSentenceContent(content, userDetails.getUser().getId());
         final HttpHeaders headers = RestUtils.createLocationHeaderFromCurrentUri("/{id}", content.getId());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
@@ -88,7 +92,7 @@ public class ContentController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteById(@Valid @PathVariable Long id) {
         contentAdapter.deleteContent(id);
         return ResponseEntity.noContent().build();
     }

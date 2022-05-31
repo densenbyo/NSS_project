@@ -46,13 +46,13 @@ public class FlashcardDeckController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public FlashcardDeckModel getFlashcardDeck(@Valid @PathVariable Long id, @CurrentUser UserDetailsImpl userDetails) {
+    public FlashcardDeckModel getFlashcardDeck(@Valid @PathVariable Long id,
+                                               @CurrentUser UserDetailsImpl userDetails) {
         return flashcardDeckAdapter.findFlashcardDeckById(id, userDetails.getUser().getRole());
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @PutMapping(value = "/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> updateFlashcardDeck(@Valid @PathVariable Long id,
                                                     @Valid @RequestBody FlashcardDeckModel flashcardDeckModel,
                                                     @CurrentUser UserDetailsImpl userDetails) {
@@ -63,7 +63,6 @@ public class FlashcardDeckController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @DeleteMapping(value = "/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> deleteFlashcardDeck(@Valid @PathVariable Long id) {
         flashcardDeckAdapter.deleteFlashcardDeck(id);
         log.info("Removed flashcardDeck with id{}.", id);
@@ -71,8 +70,7 @@ public class FlashcardDeckController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
-    @PatchMapping(value ="/{id}/restore")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PatchMapping(value = "/{id}/restore")
     public ResponseEntity<Void> restoreFlashcardDeck(@Valid @PathVariable Long id) {
         flashcardDeckAdapter.restoreFlashcardDeck(id);
         log.info("Restored flashcardDeck with id{}.", id);
@@ -81,7 +79,6 @@ public class FlashcardDeckController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @PutMapping(value = "/{id}/addFlashcard")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> addCard(@Valid @PathVariable Long id,
                                         @RequestBody FlashcardModel flashcardModel,
                                         @CurrentUser UserDetailsImpl userDetails) {
@@ -92,10 +89,9 @@ public class FlashcardDeckController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @DeleteMapping(value = "/{id}/removeFlashcard")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<Void> removeCard(@PathVariable Long id,
-                           @RequestBody FlashcardModel flashcardModel,
-                           @CurrentUser UserDetailsImpl userDetails) {
+                                           @RequestBody FlashcardModel flashcardModel,
+                                           @CurrentUser UserDetailsImpl userDetails) {
         flashcardDeckAdapter.removeFlashcardToFlashcardDeck(id, userDetails.getUser().getId(), flashcardModel);
         log.debug("Card {} removed from deck with id {}.", flashcardModel, id);
         return ResponseEntity.noContent().build();

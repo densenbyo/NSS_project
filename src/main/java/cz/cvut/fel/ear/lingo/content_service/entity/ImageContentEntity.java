@@ -1,6 +1,7 @@
 package cz.cvut.fel.ear.lingo.content_service.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,7 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 @Entity
 @PrimaryKeyJoinColumn(referencedColumnName="id")
 public class ImageContentEntity extends AbstractContentEntity {

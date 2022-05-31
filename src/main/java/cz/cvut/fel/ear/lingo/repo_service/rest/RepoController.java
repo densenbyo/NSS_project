@@ -68,7 +68,7 @@ public class RepoController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
     @DeleteMapping(value = "/{id}/flashcards")
     public ResponseEntity<Void> removeFlashcard(@PathVariable Long id,
-                                @RequestBody FlashcardModel flashcardModel) {
+                                                @RequestBody FlashcardModel flashcardModel) {
         repoAdapter.removeFlashcardFromRepo(id, flashcardModel);
         log.info("Card {} deleted from Repo : {}.", flashcardModel, id);
         return ResponseEntity.noContent().build();
@@ -77,7 +77,7 @@ public class RepoController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
     @PutMapping(value = "/{id}/flashcardDecks")
     public ResponseEntity<Void> addFlashcardDeck(@PathVariable Long id,
-                                 @RequestBody FlashcardDeckModel flashcardDeckModel) {
+                                                 @RequestBody FlashcardDeckModel flashcardDeckModel) {
         repoAdapter.addFlashcardDeckToRepo(id, flashcardDeckModel);
         log.info("Deck {} added to Repo {}.", flashcardDeckModel, id);
         return ResponseEntity.noContent().build();
@@ -86,7 +86,7 @@ public class RepoController {
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")
     @DeleteMapping(value = "/{id}/flashcardDecks")
     public ResponseEntity<Void> removeFlashcardDeck(@PathVariable Long id,
-                                    @RequestBody FlashcardDeckModel flashcardDeckModel) {
+                                                    @RequestBody FlashcardDeckModel flashcardDeckModel) {
         repoAdapter.removeFlashcardDecFromRepo(id, flashcardDeckModel);
         log.info("Deck {} deleted from Repo : {}.", flashcardDeckModel, id);
         return ResponseEntity.noContent().build();

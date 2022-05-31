@@ -1,19 +1,21 @@
 package cz.cvut.fel.ear.lingo.flashcard_service.entity;
 
-import com.fasterxml.jackson.annotation.*;
-import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.content_service.entity.AbstractContentEntity;
+import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 import cz.cvut.fel.ear.lingo.model.util.Views;
 import cz.cvut.fel.ear.lingo.user_service.entity.UserEntity;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@Data
-@Builder
+@Setter
+@Getter
 @Entity
 @NamedNativeQuery(
         name = "findByWord",
@@ -48,7 +50,7 @@ public class FlashcardEntity extends AbstractClassEntity {
     @Basic(optional = false)
     @Column(nullable = false)
     @JsonView(Views.Public.class)
-    private boolean isRemoved;
+    private boolean removed;
 
     @Basic(optional = false)
     @Column(nullable = false)
@@ -61,21 +63,21 @@ public class FlashcardEntity extends AbstractClassEntity {
 
     @OneToMany
     @JsonView(Views.Public.class)
-    private List<FlashcardProgressEntity> flashcardProgressEntities;
+    private List<FlashcardProgressEntity> flashcardProgresses;
 
     @OneToOne
     @JsonIgnore
     private UserEntity creator;
 
     public FlashcardEntity() {
-        this.isRemoved = false;
+        this.removed = false;
     }
 
     public FlashcardEntity(String word, String translation, UserEntity creator) {
         this.word = word;
         this.translation = translation;
         this.creator = creator;
-        this.isRemoved = false;
+        this.removed = false;
     }
 
     public void addContent(AbstractContentEntity abstractContentEntity){
@@ -95,12 +97,12 @@ public class FlashcardEntity extends AbstractClassEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FlashcardEntity flashcardEntity = (FlashcardEntity) o;
-        if (isRemoved != flashcardEntity.isRemoved) return false;
+        if (removed != flashcardEntity.removed) return false;
         if (!Objects.equals(word, flashcardEntity.word)) return false;
         if (!Objects.equals(translation, flashcardEntity.translation))
             return false;
         if (!Objects.equals(contents, flashcardEntity.contents)) return false;
-        if (!Objects.equals(flashcardProgressEntities, flashcardEntity.flashcardProgressEntities))
+        if (!Objects.equals(flashcardProgresses, flashcardEntity.flashcardProgresses))
             return false;
         return Objects.equals(creator, flashcardEntity.creator);
     }
@@ -108,10 +110,10 @@ public class FlashcardEntity extends AbstractClassEntity {
     @Override
     public int hashCode() {
         int result = word != null ? word.hashCode() : 0;
-        result = 31 * result + (isRemoved ? 1 : 0);
+        result = 31 * result + (removed ? 1 : 0);
         result = 31 * result + (translation != null ? translation.hashCode() : 0);
         result = 31 * result + (contents != null ? contents.hashCode() : 0);
-        result = 31 * result + (flashcardProgressEntities != null ? flashcardProgressEntities.hashCode() : 0);
+        result = 31 * result + (flashcardProgresses != null ? flashcardProgresses.hashCode() : 0);
         result = 31 * result + (creator != null ? creator.hashCode() : 0);
         return result;
     }

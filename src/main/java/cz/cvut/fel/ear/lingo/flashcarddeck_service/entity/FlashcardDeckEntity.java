@@ -1,11 +1,14 @@
 package cz.cvut.fel.ear.lingo.flashcarddeck_service.entity;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.flashcard_service.entity.FlashcardEntity;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClassEntity;
 import cz.cvut.fel.ear.lingo.model.util.Views;
 import cz.cvut.fel.ear.lingo.user_service.entity.UserEntity;
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,8 +16,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
-@Data
-@Builder
+@Getter
+@Setter
 @Entity
 public class FlashcardDeckEntity extends AbstractClassEntity {
 
@@ -41,7 +44,7 @@ public class FlashcardDeckEntity extends AbstractClassEntity {
     @ManyToMany
     @OrderBy("word")
     @JsonView(Views.Public.class)
-    private List<FlashcardEntity> flashcardEntities;
+    private List<FlashcardEntity> flashcards;
 
     @OneToOne
     @JsonIgnore
@@ -53,18 +56,18 @@ public class FlashcardDeckEntity extends AbstractClassEntity {
     }
 
     public void addFlashcard(FlashcardEntity flashcardEntity){
-        if (flashcardEntities == null)
-            flashcardEntities = new ArrayList<>();
-        flashcardEntities.add(flashcardEntity);
+        if (flashcards == null)
+            flashcards = new ArrayList<>();
+        flashcards.add(flashcardEntity);
     }
 
     public void removeFlashcard(FlashcardEntity flashcardEntity){
-        if(flashcardEntities != null)
-            flashcardEntities.removeIf(c -> Objects.equals(c.getId(), flashcardEntity.getId()));
+        if(flashcards != null)
+            flashcards.removeIf(c -> Objects.equals(c.getId(), flashcardEntity.getId()));
     }
 
     public boolean contains(FlashcardEntity flashcardEntity) {
-        final Iterator<FlashcardEntity> it = flashcardEntities.iterator();
+        final Iterator<FlashcardEntity> it = flashcards.iterator();
         while (it.hasNext()) {
             final FlashcardEntity curr = it.next();
             if (Objects.equals(flashcardEntity.getId(), curr.getId()))
@@ -82,7 +85,7 @@ public class FlashcardDeckEntity extends AbstractClassEntity {
         if (!Objects.equals(description, that.description)) result = false;
         if (!isPublic.equals(that.isPublic)) result = false;
         if (!isRemoved.equals(that.isRemoved)) result = false;
-        if (!Objects.equals(flashcardEntities, that.flashcardEntities)) result = false;
+        if (!Objects.equals(flashcards, that.flashcards)) result = false;
         return result;
     }
 
@@ -92,7 +95,7 @@ public class FlashcardDeckEntity extends AbstractClassEntity {
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + isPublic.hashCode();
         result = 31 * result + isRemoved.hashCode();
-        result = 31 * result + (flashcardEntities != null ? flashcardEntities.hashCode() : 0);
+        result = 31 * result + (flashcards != null ? flashcards.hashCode() : 0);
         return result;
     }
 }

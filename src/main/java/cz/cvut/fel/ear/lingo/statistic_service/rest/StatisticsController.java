@@ -25,14 +25,15 @@ public class StatisticsController {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<StatisticModel> allStatistics(){
+    public List<StatisticModel> allStatistics() {
         return statisticAdapter.findAllStatistics();
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> clearStatistics(@PathVariable Long id, @CurrentUser UserDetailsImpl userDetails) {
-        statisticAdapter.clearStatistic(id, userDetails.getUser().getStatisticEntity().getId(), userDetails.getUser().getRole());
+    public ResponseEntity<Void> clearStatistics(@PathVariable Long id,
+                                                @CurrentUser UserDetailsImpl userDetails) {
+        statisticAdapter.clearStatistic(id, userDetails.getUser().getStatistic().getId(), userDetails.getUser().getRole());
         return ResponseEntity.noContent().build();
     }
 }
