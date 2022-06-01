@@ -6,34 +6,55 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="added Lombok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AbstractContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AbstractContentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AudioContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AudioContentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ContextSentenceContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ContextSentenceContentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ImageContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ImageContentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/MnemonicContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/MnemonicContentEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/rest/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/rest/ContentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/ContentDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDeckDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/GenericDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/RepoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/StatisticDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/TagDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/TagDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/entity/FlashcardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/entity/FlashcardEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/rest/FlashcardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/rest/FlashcardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/entity/FlashcardDeckEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/entity/FlashcardDeckEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/rest/FlashcardDeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/rest/FlashcardDeckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/repo_service/rest/RepoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/repo_service/rest/RepoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/entity/StatisticEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/entity/StatisticEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/rest/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/rest/StatisticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/TagEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/TagEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/rest/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/rest/TagController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/Oauth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/Oauth2AuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AbstractContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/entity/AbstractContentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/AudioContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/entity/AudioContentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ContextSentenceContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/entity/ContextSentenceContentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/ImageContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/entity/ImageContentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/entity/MnemonicContentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/entity/MnemonicContentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content_service/rest/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/content/rest/ContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/entity/FlashcardEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard/entity/FlashcardEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/entity/FlashcardProgressEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard/entity/FlashcardProgressEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard_service/rest/FlashcardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcard/rest/FlashcardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/entity/FlashcardDeckEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck/entity/FlashcardDeckEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck_service/rest/FlashcardDeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/flashcarddeck/rest/FlashcardDeckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/repo_service/rest/RepoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/repo/rest/RepoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/entity/StatisticEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistics/entity/StatisticEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistic_service/rest/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/statistics/rest/StatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/TagEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/entity/TagEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/entity/repository/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/entity/repository/GenericDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/TagDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/entity/repository/TagDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/rest/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/rest/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/entity/enumeration/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/entity/enumeration/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/rest/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/rest/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/rest/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/AuthenticationFailure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/AuthenticationFailure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/AuthenticationSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/AuthenticationSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/DefaultAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/DefaultAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/Oauth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/Oauth2AuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/SecurityConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/SecurityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/SessionTimeoutManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/SessionTimeoutManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/jwt/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/jwt/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/jwt/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/jwt/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/jwt/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/jwt/JwtAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/AuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/AuthenticationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/LoginStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/LoginStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/RegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/security/model/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/security/model/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/service/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/util/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/localcfg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/localcfg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +65,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -116,6 +137,7 @@
       <recent name="D:\studium\NSS\spFinal\user-service\src\main\java\cz.cvut.fel.nss.lingo.userservice\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\studium\NSS\spFinal\logstash" />
       <recent name="D:\studium\NSS\spFinal\user-service\src\main\java\cz.cvut.fel.nss.lingo.userservice\service\interfaces" />
       <recent name="D:\Records\NSS\Semka\nss_project\src" />
       <recent name="D:\Records\NSS\Semka\nss_project" />
@@ -128,7 +150,7 @@
       <recent name="cz.cvut.fel.ear.lingo.tag_service.adapter" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.LingoApplication">
     <configuration name="LingoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <envs>
@@ -140,6 +162,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -165,7 +201,10 @@
       <workItem from="1653810155094" duration="25374000" />
       <workItem from="1653892288095" duration="34551000" />
       <workItem from="1653972742649" duration="16567000" />
-      <workItem from="1654002083627" duration="12268000" />
+      <workItem from="1654002083627" duration="12294000" />
+      <workItem from="1654065769067" duration="26414000" />
+      <workItem from="1654114371678" duration="5148000" />
+      <workItem from="1654120567597" duration="1350000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>
@@ -188,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653488343846</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added Lombok">
+      <created>1654025538453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654025538453</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,106 +307,29 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserJpaRepositoryAdapter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/adapter/UserJpaRepositoryAdapter.java</url>
           <line>84</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/UserController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/rest/UserController.java</url>
           <line>92</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserAdapter.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserAdapter.java</url>
-          <line>64</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/UserController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserAdapter.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserAdapter.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/service/UserDetailsServiceImpl.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/service/UserDetailsServiceImpl.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserJpaRepositoryAdapter.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserJpaRepositoryAdapter.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserJpaRepositoryAdapter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/adapter/UserJpaRepositoryAdapter.java</url>
           <line>80</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/adapter/UserJpaRepositoryAdapter.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user/adapter/UserJpaRepositoryAdapter.java</url>
           <line>91</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/mapper/UserModel2UserMapper.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/rest/RegistrationController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag_service/entity/repository/BaseDao.java</url>
-          <line>53</line>
-          <properties class="cz.cvut.fel.ear.lingo.tag_service.entity.repository.BaseDao">
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/user_service/mapper/UserModel2UserMapper.java</url>
-          <line>16</line>
-          <properties class="cz.cvut.fel.ear.lingo.user_service.mapper.UserModel2UserMapper" method="toUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="58" />
+          <url>file://$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/tag/entity/repository/BaseDao.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="89" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

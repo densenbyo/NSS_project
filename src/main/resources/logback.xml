@@ -9,9 +9,18 @@
         </encoder>
     </appender>
 
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>lingo.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
     <!-- Logger for our app -->
     <logger name="cz.cvut.fel.ear.lingo" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE" />
     </logger>
 
     <!-- Restrict logging of Spring -->
