@@ -1,0 +1,12 @@
+54909 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [preHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@77c411f4]][POST]/users/login
+54957 [http-nio-8080-exec-2] DEBUG c.c.f.e.l.u.s.DefaultAuthenticationProvider - Authenticating user admin
+55092 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [postHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@77c411f4]]
+55092 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [afterCompletion][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@77c411f4]][exception: null]
+936709 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [preHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@28a5a5a7]][POST]/users/login
+936880 [http-nio-8080-exec-2] DEBUG c.c.f.e.l.u.s.DefaultAuthenticationProvider - Authenticating user admin
+937279 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [postHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@28a5a5a7]]
+937282 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [afterCompletion][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@28a5a5a7]][exception: null]
+24958 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [preHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@4834afda]][POST]/users/login
+25007 [http-nio-8080-exec-2] DEBUG c.c.f.e.l.u.s.DefaultAuthenticationProvider - Authenticating user admin
+25136 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [postHandle][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@4834afda]]
+25137 [http-nio-8080-exec-2] INFO  c.c.fel.ear.lingo.util.Interceptor - [afterCompletion][SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@4834afda]][exception: null]
