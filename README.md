@@ -12,6 +12,8 @@ and the word in the chosen language is written on another side.
 - [Elastic](https://en.wikipedia.org/wiki/Elasticsearch)
 
 # Basic Instruction
+You can test backend side of webapp on [Pocket Lingo](https://pocketlingo.herokuapp.com).
+**Before testing, be sure that you are using postman or something similar to it.**
 Application is needed to be started on web server. Before starting need to configure settings
 of application as link to database.
 Go to 
