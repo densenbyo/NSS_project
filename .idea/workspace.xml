@@ -4,14 +4,142 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="small changes in kafka">
+    <list default="true" id="4e5295b2-35a9-468f-b565-fbc990a03191" name="Changes" comment="Readme change">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/Find.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/Find.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindById.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindById.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByMail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByMail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByName.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByName.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/repoService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/repoService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/LingoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/java/cz/cvut/fel/ear/lingo/LingoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/java/cz/cvut/fel/ear/lingo/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/config/PersistenceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/java/cz/cvut/fel/ear/lingo/config/PersistenceConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/java/cz/cvut/fel/ear/lingo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/ContentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/ContentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDeckDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/FlashcardDeckDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/GenericDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/GenericDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/RepoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/RepoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/StatisticDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/StatisticDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/TagDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/TagDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/pockelingo_dao/src/main/java/cz/cvut/fel/ear/lingo/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/exception/LingoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_exceptions/src/main/java/cz/cvut/fel/ear/lingo/exception/LingoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/exception/NotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_exceptions/src/main/java/cz/cvut/fel/ear/lingo/exception/NotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/Flashcard.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/Flashcard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/FlashcardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/FlashcardDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/FlashcardProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/FlashcardProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/Repo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/Repo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/Statistic.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/Statistic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/abstracts/AbstractClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/abstracts/AbstractClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/abstracts/AbstractContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/abstracts/AbstractContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/contents/AudioContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/contents/AudioContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/contents/ContextSentenceContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/contents/ContextSentenceContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/contents/ImageContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/contents/ImageContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/contents/MnemonicContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/contents/MnemonicContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/enums/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/enums/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/model/util/Views.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_model/src/main/java/cz/cvut/fel/ear/lingo/model/util/Views.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/ContentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/ContentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/FlashcardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/FlashcardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/FlashcardDeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/FlashcardDeckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/RepoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/RepoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/RestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/RestUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/StatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_rest/src/main/java/cz/cvut/fel/ear/lingo/rest/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/AuthenticationFailure.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/AuthenticationFailure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/AuthenticationSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/AuthenticationSuccess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/DefaultAuthenticationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/DefaultAuthenticationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/Oauth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/Oauth2AuthenticationSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/SecurityConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/SecurityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/SessionTimeoutManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/SessionTimeoutManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/jwt/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/AuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/AuthenticationToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/LoginStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/LoginStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/RegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/RegistrationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/security/model/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_securities/src/main/java/cz/cvut/fel/ear/lingo/security/model/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/ContentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/ContentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/FlashcardDeckServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/FlashcardDeckServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/FlashcardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/FlashcardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/KafkaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/KafkaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/PlainStudyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/PlainStudyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/RepoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/RepoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/StatisticServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/StatisticServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/ContentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/ContentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/FlashcardDeckService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/FlashcardDeckService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/FlashcardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/FlashcardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/KafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/KafkaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/PlainStudyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/PlainStudyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/RepoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/RepoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/StatisticService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/StatisticService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/interfaces/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/security/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/security/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/services/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/services/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cz/cvut/fel/ear/lingo/util/Interceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_service/src/main/java/cz/cvut/fel/ear/lingo/util/Interceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/eclipselink.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/resources/eclipselink.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hazelcast.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/resources/hazelcast.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/localcfg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/resources/localcfg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pocketlingo_application/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/AdminPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/Cards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/Footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/NavigationBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/Repo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/UserLogin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/Welcome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/creator/NewCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/creator/NewDeck.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/creator/UserRegistration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/csm_2162_PE_Dekorbild_0ec3e17e00.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/Find.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindById.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByMail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/components/find/FindByName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/authService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/repoService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/urlService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/util/Alert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pocket/src/services/util/NotFound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/Generator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/BaseDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/FlashcardDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/FlashcardDeckDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/RepoDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/TagDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/dao/UserDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/model/.gitstub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cz/cvut/fel/ear/lingo/services/FlashcardDeckServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application-test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/eclipselink.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +154,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -55,26 +188,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../GIT/atazhmuk" />
+    <property name="jdk.selected.PYTHON_MODULE" value="Python 3.10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../DSA/hw4" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Records\NSS\Semka\nss_project\src" />
       <recent name="D:\Records\NSS\Semka\nss_project" />
+      <recent name="D:\Records\NSS\Semka\nss_project\pocketlingo_application\src\main\resources" />
+      <recent name="D:\Records\NSS\Semka\nss_project\src" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="LingoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="PocketLingo" />
+      <module name="pocketlingo_application" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cz.cvut.fel.ear.lingo.LingoApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <envs>
-        <env name="spring.config.name" value="localcfg" />
+        <env name="spring.config.name" value="application" />
       </envs>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,7 +232,13 @@
       <workItem from="1651916293001" duration="16000" />
       <workItem from="1652642268842" duration="3099000" />
       <workItem from="1652730824971" duration="5000" />
-      <workItem from="1653140387208" duration="743000" />
+      <workItem from="1653140387208" duration="2666000" />
+      <workItem from="1653329250673" duration="88000" />
+      <workItem from="1654281652664" duration="113000" />
+      <workItem from="1654281809485" duration="94000" />
+      <workItem from="1654281935587" duration="489000" />
+      <workItem from="1654615609611" duration="3247000" />
+      <workItem from="1654623287057" duration="2622000" />
     </task>
     <task id="LOCAL-00001" summary="small changes in kafka">
       <created>1651323083720</created>
@@ -113,7 +254,28 @@
       <option name="project" value="LOCAL" />
       <updated>1651853006919</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="small fix">
+      <created>1653142893871</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653142893871</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Readme change + wbs">
+      <created>1654282103223</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654282103223</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Readme change">
+      <created>1654282421356</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654282421356</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +306,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="small changes in kafka" />
-    <option name="LAST_COMMIT_MESSAGE" value="small changes in kafka" />
+    <MESSAGE value="small fix" />
+    <MESSAGE value="Readme change + wbs" />
+    <MESSAGE value="Readme change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme change" />
   </component>
 </project>

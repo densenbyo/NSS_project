@@ -7,7 +7,16 @@
     <groupId>cz.cvut.fel.ear</groupId>
     <artifactId>PocketLingo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>pocketlingo_model</module>
+        <module>pockelingo_dao</module>
+        <module>pocketlingo_service</module>
+        <module>pocketlingo_rest</module>
+        <module>pocketlingo_application</module>
+        <module>pocketlingo_securities</module>
+        <module>pocketlingo_exceptions</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

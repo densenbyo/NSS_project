@@ -2,19 +2,41 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Maven default annotation processors profile" enabled="true">
+      <profile name="Maven default annotation processors profile">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="pocketlingo_model" />
+        <module name="pocketlingo_service" />
+        <module name="pocketlingo_securities" />
+        <module name="pockelingo_dao" />
+        <module name="pocketlingo_exceptions" />
+        <module name="pocketlingo_security" />
         <module name="nss_project" />
-        <module name="PocketLingo" />
+        <module name="pocketlingo_application" />
+        <module name="pocketlingo_rest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pocketlingo_config" target="17" />
+      <module name="pocketlingo_exception" target="17" />
+      <module name="pocketlingo_security" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="PocketLingo" options="-parameters" />
+      <module name="PocketLingo" options="" />
       <module name="nss_project" options="-parameters" />
+      <module name="pockelingo_dao" options="-parameters" />
+      <module name="pocketlingo_application" options="-parameters" />
+      <module name="pocketlingo_config" options="-parameters" />
+      <module name="pocketlingo_exception" options="-parameters" />
+      <module name="pocketlingo_exceptions" options="-parameters" />
+      <module name="pocketlingo_model" options="-parameters" />
+      <module name="pocketlingo_rest" options="-parameters" />
+      <module name="pocketlingo_securities" options="-parameters" />
+      <module name="pocketlingo_security" options="-parameters" />
+      <module name="pocketlingo_service" options="-parameters" />
     </option>
   </component>
 </project>
