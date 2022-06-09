@@ -57,7 +57,9 @@ Already exists 2 type of user.
    }
 ```
 
-# Getting Started only with Spring
+# Getting Started only with Spring on local
+Go to Run -> Edit configuration -> Modify options. Add there Environment variables.
+In Environment variables text box write `spring.config.name=localcfg`
 Run LingoApplication in IDE
 
 # Start with React Front-End
