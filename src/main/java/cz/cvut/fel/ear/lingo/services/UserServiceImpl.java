@@ -1,7 +1,7 @@
 package cz.cvut.fel.ear.lingo.services;
 
-import cz.cvut.fel.ear.lingo.dao.StatisticDao;
-import cz.cvut.fel.ear.lingo.dao.UserDao;
+import cz.cvut.fel.ear.lingo.repo.StatisticDao;
+import cz.cvut.fel.ear.lingo.repo.UserDao;
 import cz.cvut.fel.ear.lingo.model.Statistic;
 import cz.cvut.fel.ear.lingo.model.User;
 import cz.cvut.fel.ear.lingo.model.enums.UserRole;

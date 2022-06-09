@@ -4,7 +4,7 @@ import cz.cvut.fel.ear.lingo.Generator;
 import cz.cvut.fel.ear.lingo.LingoApplication;
 import cz.cvut.fel.ear.lingo.model.Flashcard;
 import cz.cvut.fel.ear.lingo.model.User;
-import org.junit.jupiter.api.AfterAll;
+import cz.cvut.fel.ear.lingo.repo.FlashcardDao;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,6 @@ import org.springframework.context.annotation.ComponentScan;
 import javax.persistence.PersistenceException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 

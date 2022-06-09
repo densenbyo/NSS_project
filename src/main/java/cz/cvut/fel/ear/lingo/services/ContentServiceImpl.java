@@ -1,7 +1,6 @@
 package cz.cvut.fel.ear.lingo.services;
 
-import cz.cvut.fel.ear.lingo.dao.ContentDao;
-import cz.cvut.fel.ear.lingo.exception.NotFoundException;
+import cz.cvut.fel.ear.lingo.repo.dao.ContentDao;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import cz.cvut.fel.ear.lingo.rest.StatisticsController;
 import cz.cvut.fel.ear.lingo.services.interfaces.ContentService;
@@ -13,7 +12,6 @@ import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service

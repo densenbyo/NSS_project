@@ -1,11 +1,11 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.repo;
 
+import cz.cvut.fel.ear.lingo.repo.dao.BaseDao;
 import cz.cvut.fel.ear.lingo.exception.NotFoundException;
 import cz.cvut.fel.ear.lingo.model.Tag;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.NoResultException;
-import javax.persistence.PersistenceException;
 import java.util.List;
 import java.util.Objects;
 

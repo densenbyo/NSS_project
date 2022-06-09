@@ -1,6 +1,6 @@
 package cz.cvut.fel.ear.lingo.services.security;
 
-import cz.cvut.fel.ear.lingo.dao.UserDao;
+import cz.cvut.fel.ear.lingo.repo.UserDao;
 import cz.cvut.fel.ear.lingo.model.User;
 import cz.cvut.fel.ear.lingo.security.model.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;

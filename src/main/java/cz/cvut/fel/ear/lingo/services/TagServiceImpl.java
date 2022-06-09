@@ -1,6 +1,6 @@
 package cz.cvut.fel.ear.lingo.services;
 
-import cz.cvut.fel.ear.lingo.dao.TagDao;
+import cz.cvut.fel.ear.lingo.repo.TagDao;
 import cz.cvut.fel.ear.lingo.model.Flashcard;
 import cz.cvut.fel.ear.lingo.model.Tag;
 import cz.cvut.fel.ear.lingo.services.interfaces.TagService;

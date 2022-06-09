@@ -1,4 +1,4 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.repo.dao;
 
 import java.util.Collection;
 import java.util.List;

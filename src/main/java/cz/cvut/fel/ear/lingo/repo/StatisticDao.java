@@ -1,5 +1,6 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.repo;
 
+import cz.cvut.fel.ear.lingo.repo.dao.BaseDao;
 import cz.cvut.fel.ear.lingo.model.Statistic;
 import org.springframework.stereotype.Repository;
 

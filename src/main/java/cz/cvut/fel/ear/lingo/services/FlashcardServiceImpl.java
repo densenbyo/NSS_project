@@ -1,6 +1,6 @@
 package cz.cvut.fel.ear.lingo.services;
 
-import cz.cvut.fel.ear.lingo.dao.FlashcardDao;
+import cz.cvut.fel.ear.lingo.repo.FlashcardDao;
 import cz.cvut.fel.ear.lingo.model.Flashcard;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import cz.cvut.fel.ear.lingo.services.interfaces.FlashcardService;

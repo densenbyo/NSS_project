@@ -1,16 +1,15 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.repo;
 
+import cz.cvut.fel.ear.lingo.repo.dao.BaseDao;
 import cz.cvut.fel.ear.lingo.exception.NotFoundException;
 import cz.cvut.fel.ear.lingo.model.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.NoResultException;
-import javax.persistence.PersistenceException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.Objects;
 
 @Repository
 public class UserDao extends BaseDao<User> {

@@ -1,4 +1,4 @@
-package cz.cvut.fel.ear.lingo.dao;
+package cz.cvut.fel.ear.lingo.repo.dao;
 
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import org.springframework.data.repository.CrudRepository;
