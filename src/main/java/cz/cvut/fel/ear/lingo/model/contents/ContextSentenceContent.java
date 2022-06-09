@@ -1,6 +1,8 @@
 package cz.cvut.fel.ear.lingo.model.contents;
 
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -10,19 +12,13 @@ import java.util.Objects;
 
 @Entity
 @PrimaryKeyJoinColumn(referencedColumnName="id")
+@Getter
+@Setter
 public class ContextSentenceContent extends AbstractContent {
 
     @Basic(optional = false)
     @Column(nullable = false)
     private String sentence;
-
-    public String getSentence() {
-        return sentence;
-    }
-
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
-    }
 
     @Override
     public boolean equals(Object o) {

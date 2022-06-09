@@ -76,7 +76,7 @@ public class BaseDaoTest {
 
         flashcardDeck.setName("new name");
         flashcardDeck.setDescription("new description");
-        flashcardDeck.setRemoved(true);
+        flashcardDeck.setIsRemoved(true);
         dao.update(flashcardDeck);
 
         final FlashcardDeck result = em.find(FlashcardDeck.class, flashcardDeck.getId());

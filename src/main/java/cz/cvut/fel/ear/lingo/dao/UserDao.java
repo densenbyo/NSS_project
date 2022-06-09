@@ -1,5 +1,6 @@
 package cz.cvut.fel.ear.lingo.dao;
 
+import cz.cvut.fel.ear.lingo.exception.NotFoundException;
 import cz.cvut.fel.ear.lingo.model.User;
 import org.springframework.stereotype.Repository;
 
@@ -24,8 +25,8 @@ public class UserDao extends BaseDao<User> {
         try {
             return em.createQuery("SELECT u FROM User u WHERE NOT u.isRemoved", User.class)
                     .getResultList();
-        } catch (NoResultException e) {
-            return null;
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -41,8 +42,8 @@ public class UserDao extends BaseDao<User> {
                     )
             );
             return em.createQuery(cq).getSingleResult();
-        } catch (NoResultException e) {
-            return null;
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -51,8 +52,8 @@ public class UserDao extends BaseDao<User> {
             return em.createNamedQuery("User.findByUsername", User.class)
                     .setParameter("username", username)
                     .getSingleResult();
-        } catch (NoResultException e) {
-            return null;
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -61,8 +62,8 @@ public class UserDao extends BaseDao<User> {
             return em.createQuery("SELECT u FROM User u WHERE NOT u.isRemoved AND u.id = :id", User.class)
                     .setParameter("id", id)
                     .getSingleResult();
-        } catch (NoResultException e){
-            return null;
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -72,8 +73,8 @@ public class UserDao extends BaseDao<User> {
                             "SELECT u FROM User u LEFT JOIN u.statistic.achievements a WHERE NOT u.isRemoved AND a = :achievement", User.class)
                     .setParameter("achievement", achievement)
                     .getResultList();
-        } catch (NoResultException e) {
-            throw new PersistenceException(e);
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 }

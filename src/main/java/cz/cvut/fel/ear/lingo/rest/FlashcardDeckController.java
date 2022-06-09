@@ -51,7 +51,7 @@ public class FlashcardDeckController {
     public List<FlashcardDeck> getFlashcardDecks(@CurrentUser UserDetailsImpl userDetails) {
         List<FlashcardDeck> flashcardDecks =  fdService.findAll();
         if (userDetails.getUser().isUser()) {
-            return flashcardDecks.stream().filter(FlashcardDeck::isPublic).collect(Collectors.toList());
+            return flashcardDecks.stream().filter(FlashcardDeck::getIsPublic).collect(Collectors.toList());
         }
         return flashcardDecks;
     }
@@ -63,7 +63,7 @@ public class FlashcardDeckController {
         if (userDetails.getUser().isAdmin())
             return flashcardDeck;
         else
-            return (flashcardDeck.isPublic() || flashcardDeck.getCreator().getId().equals(userDetails.getUser().getId()))
+            return (flashcardDeck.getIsPublic() || flashcardDeck.getCreator().getId().equals(userDetails.getUser().getId()))
                     ? flashcardDeck : null;
     }
 

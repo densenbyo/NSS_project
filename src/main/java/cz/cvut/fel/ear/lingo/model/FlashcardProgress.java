@@ -3,6 +3,8 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -11,6 +13,8 @@ import javax.persistence.ManyToOne;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
 public class FlashcardProgress extends AbstractClass {
 
     @Basic(optional = false)
@@ -29,22 +33,6 @@ public class FlashcardProgress extends AbstractClass {
     public FlashcardProgress(Flashcard flashcard) {
         this.flashcard = flashcard;
         this.progressDegree = 0.;
-    }
-
-    public Flashcard getFlashcard() {
-        return flashcard;
-    }
-
-    public void setFlashcard(Flashcard flashcard) {
-        this.flashcard = flashcard;
-    }
-
-    public void setProgressDegree(Double progressDegree) {
-        this.progressDegree = progressDegree;
-    }
-
-    public Double getProgressDegree() {
-        return progressDegree;
     }
 
     @Override

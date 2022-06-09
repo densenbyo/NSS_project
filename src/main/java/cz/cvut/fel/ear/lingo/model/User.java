@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.enums.UserRole;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
@@ -12,7 +14,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "POCKET_USER")
 @NamedQuery(name = "User.findByUsername", query = "SELECT u FROM User u WHERE u.isRemoved = false AND u.username = :username")
-
+@Getter
+@Setter
 public class User extends AbstractClass {
 
     @Basic(optional = false)
@@ -80,60 +83,12 @@ public class User extends AbstractClass {
         statistic.removeFlashcard(flashcard);
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
     public void encodePassword(PasswordEncoder encoder) {
         this.password = encoder.encode(password);
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public void erasePassword() {
         this.password = null;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-
-    public Boolean isRemoved() {
-        return isRemoved;
-    }
-
-    public void setRemoved(Boolean removed) {
-        isRemoved = removed;
-    }
-
-    public UserRole getRole() {
-        return role;
-    }
-
-    public void setRole(UserRole role) {
-        this.role = role;
     }
 
     public boolean isAdmin() {
@@ -142,14 +97,6 @@ public class User extends AbstractClass {
 
     public boolean isUser() {
         return role == UserRole.USER;
-    }
-
-    public Repo getRepository() {
-        return repo;
-    }
-
-    public Statistic getStatistic() {
-        return statistic;
     }
 
     @Override

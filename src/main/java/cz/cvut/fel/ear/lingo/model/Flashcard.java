@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.*;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractContent;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -34,6 +36,8 @@ import java.util.Objects;
         }
 )
 @Table(name = "FLASHCARD")
+@Getter
+@Setter
 public class Flashcard extends AbstractClass {
 
     @Basic(optional = false)
@@ -72,46 +76,6 @@ public class Flashcard extends AbstractClass {
         this.translation = translation;
         this.creator = creator;
         this.isRemoved = false;
-    }
-
-    public void setRemoved(boolean removed) {
-        isRemoved = removed;
-    }
-
-    public boolean isRemoved() {
-        return isRemoved;
-    }
-
-    public String getWord(){
-        return word;
-    }
-
-    public void setWord(String name){
-        this.word = name;
-    }
-
-    public String getTranslation(){
-        return translation;
-    }
-
-    public void setTranslation(String translation){
-        this.translation = translation;
-    }
-
-    public List<FlashcardProgress> getFlashcardProgresses() {
-        return flashcardProgresses;
-    }
-
-    public List<AbstractContent> getContents() {
-        return contents;
-    }
-
-    public User getCreator() {
-        return creator;
-    }
-
-    public void setCreator(User creator) {
-        this.creator = creator;
     }
 
     public void addContent(AbstractContent abstractContent){

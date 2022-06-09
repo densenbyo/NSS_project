@@ -30,7 +30,7 @@ public class UserDaoTest {
         final User user1 = Generator.generateUser();
         final User user2 = Generator.generateUser();
         final User user3 = Generator.generateUser();
-        user1.setRemoved(true);
+        user1.setIsRemoved(true);
         em.persist(user1);
         em.persist(user2);
         em.persist(user3);
@@ -66,6 +66,6 @@ public class UserDaoTest {
 
         dao.remove(user);
 
-        assertTrue(em.find(User.class, user.getId()).isRemoved());
+        assertTrue(em.find(User.class, user.getId()).getIsRemoved());
     }
 }

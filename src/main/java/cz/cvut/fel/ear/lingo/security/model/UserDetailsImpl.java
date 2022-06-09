@@ -86,10 +86,10 @@ public class UserDetailsImpl implements UserDetails {
     }
 
     public String getRepoId(){
-        return user.getRepository().getId().toString();
+        return user.getRepo().getId().toString();
     }
     public Repo getRepo(){
-        return user.getRepository();
+        return user.getRepo();
     }
 
     public List<String> getDetails(){

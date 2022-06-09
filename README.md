@@ -120,7 +120,7 @@ pokud není) `DONE`
 - [X] vyber vhodne architektury (event base, pipe and filter, …) (povinné) `DONE`
 - [X] inicializacni postup (jak aplikaci deploynout, kde jsou zakladni data do nove DB typu admin apod)
 (povinné) `DONE`
-- [ ] vyuziti elasticsearch (volitelné -2b pokud není) `DONE`
+- [X] vyuziti elasticsearch (volitelné -2b pokud není) `DONE`
 - [X] pouziti alespon 5 design patternu (musi davat smysl :) ) (povinné) `DONE`
 - [X] za kazdeho clena tymu 2 UC (use cases - aby SW nebyl trivialni) (povinné)
 bonusove body `DONE`

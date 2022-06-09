@@ -46,7 +46,7 @@ public class RepoController {
             LOG.info("The repository id of the authenticated user does not match id {}.", id);
             return null;
         }
-        return user.getRepository();
+        return user.getRepo();
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
@@ -85,8 +85,8 @@ public class RepoController {
         Repo repo = getRepo(id, userDetails);
         if (repo == null) return null;
         if (userDetails.getUser().isUser())
-            return repo.getFlashcardDecks().stream().filter(FlashcardDeck::isPublic).collect(Collectors.toList());
-        return repo.getFlashcardDecks().stream().filter(flashcardDeck -> !flashcardDeck.getRemoved()).collect(Collectors.toList());
+            return repo.getFlashcardDecks().stream().filter(FlashcardDeck::getIsPublic).collect(Collectors.toList());
+        return repo.getFlashcardDecks().stream().filter(flashcardDeck -> !flashcardDeck.getIsRemoved()).collect(Collectors.toList());
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_ADMIN', 'ROLE_USER')")

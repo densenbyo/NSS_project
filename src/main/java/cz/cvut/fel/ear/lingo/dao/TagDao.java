@@ -1,8 +1,10 @@
 package cz.cvut.fel.ear.lingo.dao;
 
+import cz.cvut.fel.ear.lingo.exception.NotFoundException;
 import cz.cvut.fel.ear.lingo.model.Tag;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceException;
 import java.util.List;
 import java.util.Objects;
@@ -20,8 +22,8 @@ public class TagDao extends BaseDao<Tag> {
             return em.createQuery("SELECT t FROM Tag t WHERE t.id = :id", Tag.class)
                     .setParameter("id", id)
                     .getSingleResult();
-        } catch (RuntimeException e) {
-            throw new PersistenceException(e);
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -30,8 +32,8 @@ public class TagDao extends BaseDao<Tag> {
         try {
             return em.createQuery("SELECT t FROM Tag t", Tag.class)
                     .getResultList();
-        } catch (RuntimeException e) {
-            throw new PersistenceException(e);
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -41,8 +43,8 @@ public class TagDao extends BaseDao<Tag> {
             return em.createQuery("SELECT t FROM Tag t WHERE t.name = :name", Tag.class)
                     .setParameter("name", name)
                     .getSingleResult();
-        } catch (RuntimeException e) {
-            throw new PersistenceException(e);
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -53,8 +55,8 @@ public class TagDao extends BaseDao<Tag> {
                             "SELECT t FROM Tag t JOIN t.relatedTags r WHERE r.id = :id", Tag.class)
                     .setParameter("id", id)
                     .getResultList();
-        } catch (RuntimeException e) {
-            throw new PersistenceException(e);
+        } catch (NotFoundException e) {
+            throw new NoResultException("Not Found");
         }
     }
 }

@@ -26,7 +26,7 @@ public class Generator {
                 "mail" + RAND.nextInt(100),
                 "password" + RAND.nextInt(100)
         );
-        result.setActive(RAND.nextBoolean());
+        result.setIsActive(RAND.nextBoolean());
         result.setUsername("username" + RAND.nextInt(100));
 
         return result;

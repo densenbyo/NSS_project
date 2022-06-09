@@ -31,6 +31,6 @@ public class FlashcardDeckDaoTest {
 
         dao.remove(flashcardDeck);
 
-        assertTrue(em.find(FlashcardDeck.class, flashcardDeck.getId()).getRemoved());
+        assertTrue(em.find(FlashcardDeck.class, flashcardDeck.getId()).getIsRemoved());
     }
 }

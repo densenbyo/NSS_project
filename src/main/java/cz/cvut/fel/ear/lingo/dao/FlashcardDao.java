@@ -19,7 +19,7 @@ public class FlashcardDao extends BaseDao<Flashcard> {
             return em.createQuery("SELECT f FROM Flashcard f WHERE NOT f.isRemoved", Flashcard.class)
                     .getResultList();
         } catch (NoResultException e) {
-            return null;
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -29,7 +29,7 @@ public class FlashcardDao extends BaseDao<Flashcard> {
                     .setParameter(1, word)
                     .getResultList();
         } catch (NoResultException e) {
-            return null;
+            throw new NoResultException("Not Found");
         }
     }
 
@@ -38,7 +38,7 @@ public class FlashcardDao extends BaseDao<Flashcard> {
             return em.createQuery("SELECT f FROM Flashcard f JOIN FlashcardDeck fd WHERE f MEMBER OF fd.flashcards AND fd.isPublic = true ", Flashcard.class)
                     .getResultList();
         } catch (NoResultException e){
-            return null;
+            throw new NoResultException("Not Found");
         }
     }
 }

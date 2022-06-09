@@ -3,6 +3,8 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -12,6 +14,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
 public class Statistic extends AbstractClass {
 
     @ElementCollection
@@ -62,14 +66,6 @@ public class Statistic extends AbstractClass {
         if(i != -1) {
             flashcardProgresses.remove(i);
         }
-    }
-
-    public List<String> getAchievements(){
-        return achievements;
-    }
-
-    public List<FlashcardProgress> getFlashcardProgresses() {
-        return flashcardProgresses;
     }
 
     public void addAchievements(String toAdd){

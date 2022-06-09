@@ -3,6 +3,8 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -14,6 +16,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
 public class Tag extends AbstractClass {
 
     @Basic(optional = false)
@@ -39,30 +43,6 @@ public class Tag extends AbstractClass {
     }
 
     public Tag() {}
-
-    public List<Tag> getRelatedTags() {
-        return relatedTags;
-    }
-
-    public List<Flashcard> getFlashcards() {
-        return flashcards;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public Boolean getRemoved() {
-        return isRemoved;
-    }
-
-    public void setRemoved(Boolean removed) {
-        isRemoved = removed;
-    }
 
     public void addRelatedTag(Tag tag) {
         Objects.requireNonNull(tag);

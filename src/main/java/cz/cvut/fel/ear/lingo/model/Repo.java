@@ -3,6 +3,8 @@ package cz.cvut.fel.ear.lingo.model;
 import com.fasterxml.jackson.annotation.JsonView;
 import cz.cvut.fel.ear.lingo.model.abstracts.AbstractClass;
 import cz.cvut.fel.ear.lingo.model.util.Views;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
@@ -13,6 +15,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Getter
+@Setter
 public class Repo extends AbstractClass {
 
     @ManyToMany
@@ -27,14 +31,6 @@ public class Repo extends AbstractClass {
     public Repo() {
         this.flashcardDecks = new ArrayList<>();
         this.flashcards = new ArrayList<>();
-    }
-
-    public List<Flashcard> getFlashcards() {
-        return flashcards;
-    }
-
-    public List<FlashcardDeck> getFlashcardDecks() {
-        return flashcardDecks;
     }
 
     public void addFlashcardDeck(FlashcardDeck toAdd) {

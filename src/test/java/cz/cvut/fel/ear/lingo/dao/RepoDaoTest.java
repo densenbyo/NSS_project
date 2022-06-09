@@ -25,15 +25,4 @@ public class RepoDaoTest {
 
     @Autowired
     private RepoDao dao;
-
-//    @Test
-//    public void findAllFlashcardInRepository_existentRepositoryWithFlashcards_getsFlashcardList() {
-//        final Repo repo = repoGenerator();
-//        final List<Flashcard> flashcards = repo.getFlashcards();
-//        em.persistAndFlush(repo);
-//
-//        List<Flashcard> result = dao.findAllFlashcardInRepository(repo);
-//
-//        assertEquals(flashcards, result);
-//    }
 }

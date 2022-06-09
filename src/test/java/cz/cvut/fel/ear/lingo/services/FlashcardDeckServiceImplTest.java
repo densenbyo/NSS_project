@@ -1,4 +1,3 @@
-/*
 package cz.cvut.fel.ear.lingo.services;
 
 import cz.cvut.fel.ear.lingo.Generator;
@@ -67,7 +66,7 @@ public class FlashcardDeckServiceImplTest {
     @Test
     public void removeFlashcard_existentFlashcard_cantFindFlashcardInDeck() {
         final Flashcard flashcard = Generator.generateFlashcard(user);
-        flashcardDeck.addCard(flashcard);
+        flashcardDeck.addFlashcard(flashcard);
         em.merge(flashcardDeck);
 
         service.removeFlashcard(flashcardDeck, flashcard);
@@ -79,4 +78,3 @@ public class FlashcardDeckServiceImplTest {
     }
 
 }
-*/

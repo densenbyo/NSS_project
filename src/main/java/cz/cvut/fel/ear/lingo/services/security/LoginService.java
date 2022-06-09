@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class
-LoginService {
+public class LoginService {
 
     private final DefaultAuthenticationProvider provider;
     private final JwtTokenProvider tokenProvider;
