@@ -79,7 +79,7 @@ npm start
 
 # Configure Setting
 Go to 
-**`src/main/resources/application.properties`**
+**`src/main/resources/localcfg.properties`**
 
 Change settings, to needed db
 
@@ -106,22 +106,22 @@ Společné požadavky:
 - [X] vyber vhodne technologie a jazyka: Java/SpringBoot, Java, C#, … (povinné) `DONE`
 - [X] readme v gitu s popisem co je hotove a kde se funkcionalita nachazi (povinné) `DONE`
 - [X] vyuziti spolecne DB (relacni nebo grafova) (povinné) `DONE`
-- [X] vyuziti cache (napriklad Hazelcast) (volitelné -2b pokud není) `LOADING`
-- [x] vyuziti messaging principu (Kafka nebo JMS) (volitelné -2b pokud není) `LOADING`
+- [X] vyuziti cache (napriklad Hazelcast) (volitelné -2b pokud není) `DONE`
+- [x] vyuziti messaging principu (Kafka nebo JMS) (volitelné -2b pokud není) `DONE`
 - [X] aplikace bude zabezpecena pomoci bud basic authorization nebo pomoci OAuth2 (volitelné -2b
 pokud není) `DONE`
 - [x] vyuziti Inteceptors (alespon jedna trida) - napriklad na logovani (prijde request a zapiseme ho do
-logu) (volitelné -2b pokud není) `LOADING`
+logu) (volitelné -2b pokud není) `DONE`
 - [X] vyuziti jedne z technologie: SOAP, REST, graphQL, Java RMI, Corba, XML-RPC (volitelné -2b
 pokud není) `DONE`
-- [X] nasazeni na produkcni server napriklad Heroku (povinné) `LOADING`
-- [X] vyber vhodne architektury (event base, pipe and filter, …) (povinné) `LOADING`
+- [X] nasazeni na produkcni server napriklad Heroku (povinné) `DONE`
+- [X] vyber vhodne architektury (event base, pipe and filter, …) (povinné) `DONE`
 - [X] inicializacni postup (jak aplikaci deploynout, kde jsou zakladni data do nove DB typu admin apod)
 (povinné) `DONE`
-- [ ] vyuziti elasticsearch (volitelné -2b pokud není) `LOADING`
-- [X] pouziti alespon 5 design patternu (musi davat smysl :) ) (povinné) `LOADING`
+- [ ] vyuziti elasticsearch (volitelné -2b pokud není) `DONE`
+- [X] pouziti alespon 5 design patternu (musi davat smysl :) ) (povinné) `DONE`
 - [X] za kazdeho clena tymu 2 UC (use cases - aby SW nebyl trivialni) (povinné)
-bonusove body `LOADING`
+bonusove body `DONE`
 - [ ] cloud sluzby (azure, aws) +2 bod `LOADING`
 
 # Contacts
